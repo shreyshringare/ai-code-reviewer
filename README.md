@@ -2,6 +2,8 @@
 
 **SnapCode** is an AI-powered code review application that analyzes your source code, detects potential bugs, and suggests performance improvements and best practices. Built with a modern React frontend and a FastAPI backend, SnapCode leverages Google's Gemini AI to act as your expert pair-programming partner.
 
+Deployed Link : https://snapcode-nu.vercel.app/
+
 ![SnapCode Interface Demo](frontend/public/SnapCode.svg) <!-- Replace with an actual screenshot if available -->
 
 ## 🚀 Features
