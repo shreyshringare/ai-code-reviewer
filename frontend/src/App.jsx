@@ -131,7 +131,7 @@ export default function App() {
         };
       }
 
-      const response = await axios.post("http://127.0.0.1:8000/review", payload, config);
+      const response = await axios.post("https://ai-code-reviewer-backend-2m7p.onrender.com/review", payload, config);
       setReview(response.data.review);
     } catch (error) {
       console.error("API Error:", error);

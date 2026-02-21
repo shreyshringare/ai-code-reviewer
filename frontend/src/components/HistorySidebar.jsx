@@ -26,7 +26,7 @@ export default function HistorySidebar({ open, onClose, user }) {
             setLoading(true);
             setError("");
             const response = await axios.get(
-                `http://127.0.0.1:8000/reviews?user_id=${user.id}`
+                `https://ai-code-reviewer-backend-2m7p.onrender.com/reviews?user_id=${user.id}`
             );
             if (response.data.success) {
                 setReviews(response.data.reviews);

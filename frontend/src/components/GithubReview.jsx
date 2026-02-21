@@ -33,7 +33,7 @@ export default function GithubReview({ user, setReview }) {
 
         try {
             const { data: { user: currentUser } } = await supabase.auth.getUser();
-            const response = await axios.post("http://127.0.0.1:8000/github-review", {
+            const response = await axios.post("https://ai-code-reviewer-backend-2m7p.onrender.com/github-review", {
                 repo_url: repoUrl.trim(),
                 user_id: currentUser?.id || user?.id || null
             });
