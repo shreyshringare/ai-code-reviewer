@@ -1,30 +1,61 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { supabase } from "./supabaseClient";
 import hljs from "highlight.js";
 import CodeEditor from "./components/CodeEditor";
 import ReviewButton from "./components/ReviewButton";
 import ReviewOutput from "./components/ReviewOutput";
+import Navbar from "./components/NavBar";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import HistorySidebar from "./components/HistorySidebar";
+import FileUpload from "./components/FileUpload";
+import GithubReview from "./components/GithubReview";
+import Footer from "./components/Footer";
 
-// Language detection function using highlight.js
+
+// Language detection: keyword heuristics first, hljs fallback
 function detectLanguage(code) {
   if (!code || !code.trim()) return "javascript";
 
+  // Deterministic heuristics (more reliable than hljs.highlightAuto)
+  if (/#include\s*<(iostream|cmath|cstdio|vector|string|algorithm|map|set)>/.test(code) || /\bcout\b|\bcin\b|\bstd::/.test(code))
+    return "cpp";
+  if (/#include\s*<(stdio|stdlib|string)\.h>/.test(code) && !/cout/.test(code))
+    return "c";
+  if (/using\s+System;|namespace\s+\w+\s*{|Console\.Write/.test(code))
+    return "csharp";
+  if (/^\s*(def |import |from .+ import)/m.test(code))
+    return "python";
+  if (/public\s+class\s+\w+|System\.out\.println|import\s+java\./.test(code))
+    return "java";
+  if (/^\s*package\s+main|func\s+\w+\s*\(/m.test(code))
+    return "go";
+  if (/fn\s+\w+\s*\(|let\s+mut\s+|println!\(/.test(code))
+    return "rust";
+  if (/<!DOCTYPE html>|<html|<head>|<body>/i.test(code))
+    return "html";
+  if (/^\s*(SELECT|INSERT|UPDATE|CREATE TABLE|DROP TABLE)/mi.test(code))
+    return "sql";
+
+  // Fallback to hljs.highlightAuto
   try {
     const result = hljs.highlightAuto(code);
     const lang = result.language || "javascript";
 
-    // Map highlight.js languages to Monaco editor languages where they differ
     const languageMap = {
-      'c++': 'cpp',
-      'c#': 'csharp',
-      'f#': 'fsharp',
-      'js': 'javascript',
-      'ts': 'typescript',
-      'py': 'python',
-      'rb': 'ruby',
-      'sh': 'shell',
-      'bash': 'shell'
+      'c++': 'cpp', 'c#': 'csharp', 'f#': 'fsharp',
+      'js': 'javascript', 'ts': 'typescript', 'py': 'python',
+      'rb': 'ruby', 'sh': 'shell', 'bash': 'shell', 'go': 'go',
+      'rs': 'rust', 'rust': 'rust', 'java': 'java',
+      'kt': 'kotlin', 'kotlin': 'kotlin', 'php': 'php',
+      'swift': 'swift', 'html': 'html', 'xml': 'xml',
+      'css': 'css', 'scss': 'scss', 'sql': 'sql', 'json': 'json',
+      'yaml': 'yaml', 'yml': 'yaml', 'md': 'markdown', 'markdown': 'markdown'
     };
+
+    // pgsql is a frequent false positive — don't trust it
+    if (lang === 'pgsql') return "javascript";
 
     return languageMap[lang] || lang;
   } catch (err) {
@@ -38,6 +69,33 @@ export default function App() {
   const [review, setReview] = useState("");
   const [loading, setLoading] = useState(false);
   const [language, setLanguage] = useState("javascript");
+  const [user, setUser] = useState(null);
+
+  // "null" means show main app, "login" shows login, "signup" shows signup
+  const [authPage, setAuthPage] = useState(null);
+  const [showHistory, setShowHistory] = useState(false);
+
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => {
+      setUser(data.user);
+    });
+
+    // Auto-close login/signup screens if the user logs in successfully
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user || null);
+      if (session?.user) {
+        setAuthPage(null);
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    setUser(null);
+  }
 
   useEffect(() => {
     setLanguage(detectLanguage(code));
@@ -51,7 +109,29 @@ export default function App() {
     setLoading(true);
     setReview("");
     try {
-      const response = await axios.post("http://127.0.0.1:8000/review", { code });
+      const payload = {
+        code: code,
+        language: language,
+        user_id: user ? user.id : null
+      };
+
+      // Get current JWT token from Supabase if user is logged in
+      let config = {};
+      const { data: sessionData } = await supabase.auth.getSession();
+      const token = sessionData?.session?.access_token;
+
+      // Debug: verify token is being fetched
+      console.log("TOKEN:", token);
+
+      if (token) {
+        config = {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        };
+      }
+
+      const response = await axios.post("http://127.0.0.1:8000/review", payload, config);
       setReview(response.data.review);
     } catch (error) {
       console.error("API Error:", error);
@@ -93,126 +173,126 @@ export default function App() {
         }} />
       </div>
 
-      {/* Header */}
-      <header style={{
-        position: "relative", zIndex: 1,
-        padding: "32px 48px 0",
-        textAlign: "center"
-      }}>
-        <h1 style={{
-          margin: "0 0 12px",
-          fontSize: "clamp(2rem, 5vw, 3.5rem)",
-          fontWeight: 900,
-          letterSpacing: "-2px",
-          background: "linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          lineHeight: 1.1,
-        }}>
-          AI Code Reviewer
-        </h1>
+      <Navbar
+        user={user}
+        onLogout={handleLogout}
+        onLoginClick={() => setAuthPage("login")}
+        onSignupClick={() => setAuthPage("signup")}
+        onHomeClick={() => setAuthPage(null)}
+        onHistoryClick={() => setShowHistory(true)}
+      />
 
-        <p style={{
-          margin: "0 auto 32px",
-          fontSize: "16px",
-          color: "#8b949e",
-          maxWidth: "520px",
-          lineHeight: 1.6,
-        }}>
-          Paste your code below to instantly find bugs, security flaws,<br />
-          and performance optimizations — powered by AI.
-        </p>
+      {/* History Sidebar Overlay */}
+      <HistorySidebar
+        open={showHistory}
+        onClose={() => setShowHistory(false)}
+        user={user}
+      />
 
+      {authPage === "login" && (
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <Login />
+          <div style={{ textAlign: "center", marginTop: "16px" }}>
+            <button
+              onClick={() => setAuthPage(null)}
+              style={{ background: "transparent", border: "none", color: "#8b949e", cursor: "pointer", textDecoration: "underline" }}
+            >
+              Back to App
+            </button>
+          </div>
+        </div>
+      )}
 
+      {authPage === "signup" && (
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <Signup />
+          <div style={{ textAlign: "center", marginTop: "16px" }}>
+            <button
+              onClick={() => setAuthPage(null)}
+              style={{ background: "transparent", border: "none", color: "#8b949e", cursor: "pointer", textDecoration: "underline" }}
+            >
+              Back to App
+            </button>
+          </div>
+        </div>
+      )}
 
-        {/* Divider */}
-        <div style={{
-          height: "1px",
-          background: "linear-gradient(90deg, transparent, rgba(99,102,241,0.4) 50%, transparent)",
-          margin: "0 -48px"
-        }} />
-      </header>
-
-      {/* Main two-column layout */}
-      <main style={{
-        position: "relative", zIndex: 1,
-        flex: 1,
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "0",
-        padding: "0",
-        minHeight: "calc(100vh - 260px)",
-      }}>
-
-        {/* LEFT PANEL — Code Editor */}
-        <div style={{
+      {/* Main Content — single-column layout */}
+      {authPage === null && (
+        <main style={{
+          position: "relative", zIndex: 1,
+          flex: 1,
+          maxWidth: "1100px",
+          margin: "0 auto",
+          width: "100%",
+          padding: "24px 48px 48px",
           display: "flex",
           flexDirection: "column",
-          padding: "28px 24px 28px 48px",
-          borderRight: "1px solid rgba(99,102,241,0.15)",
+          gap: "20px",
         }}>
-          {/* Panel header */}
-          <div style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: "12px",
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <div style={{
-                width: "28px", height: "28px",
-                background: "rgba(99,102,241,0.2)",
-                borderRadius: "8px",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: "14px",
-              }}>📝</div>
-              <span style={{ fontWeight: 700, fontSize: "14px", color: "#c9d1d9", letterSpacing: "0.3px" }}>
-                Source Code
-              </span>
+
+          {/* Row: FileUpload + GithubReview URL input side-by-side */}
+          <div style={{ display: "flex", gap: "12px", alignItems: "stretch" }}>
+
+            {/* File Upload card */}
+            <div style={{
+              background: "rgba(22,27,34,0.8)",
+              border: "1px solid rgba(99,102,241,0.15)",
+              borderRadius: "10px",
+              padding: "14px 18px",
+              display: "flex", alignItems: "center", gap: "10px",
+              flexShrink: 0,
+            }}>
+              <FileUpload setCode={setCode} setLanguage={setLanguage} />
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "12px", color: "#8b949e" }}>Auto-detected:</span>
-              <span style={{
-                background: "rgba(99,102,241,0.15)",
-                border: "1px solid rgba(99,102,241,0.3)",
-                padding: "3px 10px",
-                borderRadius: "6px",
-                fontSize: "12px",
-                color: "#a5b4fc",
-                fontWeight: 600,
-              }}>
-                {language}
-              </span>
+            {/* GitHub Review — compact inline form */}
+            <div style={{
+              flex: 1,
+              background: "rgba(22,27,34,0.8)",
+              border: "1px solid rgba(99,102,241,0.15)",
+              borderRadius: "10px",
+              padding: "14px 18px",
+            }}>
+              <GithubReview user={user} setReview={setReview} compact />
             </div>
           </div>
 
-          {/* Editor */}
-          <div style={{ flex: 1, minHeight: 0 }}>
-            <CodeEditor
-              code={code}
-              setCode={setCode}
-              language={language}
-              height="100%"
-            />
+          {/* Code Editor */}
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <div style={{
+                  width: "26px", height: "26px", background: "rgba(99,102,241,0.2)",
+                  borderRadius: "7px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px"
+                }}>📝</div>
+                <span style={{ fontWeight: 700, fontSize: "13px", color: "#c9d1d9" }}>Source Code</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <span style={{ fontSize: "12px", color: "#8b949e" }}>Auto-detected:</span>
+                <span style={{
+                  background: "rgba(99,102,241,0.15)", border: "1px solid rgba(99,102,241,0.3)",
+                  padding: "2px 10px", borderRadius: "6px", fontSize: "12px", color: "#a5b4fc", fontWeight: 600
+                }}>{language}</span>
+              </div>
+            </div>
+            <CodeEditor code={code} setCode={setCode} language={language} height="420px" />
           </div>
 
           {/* Review button */}
-          <div style={{ marginTop: "20px" }}>
+          <div>
             <ReviewButton onReview={handleReview} loading={loading} />
           </div>
-        </div>
 
-        {/* RIGHT PANEL — Review Output */}
-        <div style={{
-          display: "flex",
-          flexDirection: "column",
-          padding: "28px 48px 28px 24px",
-        }}>
+          {/* Review Output */}
           <ReviewOutput review={review} loading={loading} />
-        </div>
 
-      </main>
+        </main>
+      )}
+
+
+      {/* Footer */}
+      {authPage === null && <Footer />}
 
       {/* Pulse animation */}
       <style>{`
