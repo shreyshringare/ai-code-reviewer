@@ -80,9 +80,9 @@ export default function HistorySidebar({ open, onClose, user }) {
                 top: 0, right: 0,
                 height: "100vh",
                 width: "420px",
-                background: "rgba(10,12,20,0.97)",
+                background: "rgba(10, 12, 20,0.97)",
                 backdropFilter: "blur(20px)",
-                borderLeft: "1px solid rgba(99,102,241,0.2)",
+                borderLeft: "1px solid rgba(99, 102, 241,0.2)",
                 zIndex: 300,
                 display: "flex",
                 flexDirection: "column",
@@ -96,14 +96,14 @@ export default function HistorySidebar({ open, onClose, user }) {
                     alignItems: "center",
                     justifyContent: "space-between",
                     padding: "20px 20px 16px",
-                    borderBottom: "1px solid rgba(99,102,241,0.15)",
+                    borderBottom: "1px solid rgba(99, 102, 241,0.15)",
                     flexShrink: 0
                 }}>
                     <Box display="flex" alignItems="center" gap={1.5}>
                         <div style={{
                             width: "32px", height: "32px",
-                            background: "rgba(99,102,241,0.15)",
-                            border: "1px solid rgba(99,102,241,0.3)",
+                            background: "rgba(99, 102, 241,0.15)",
+                            border: "1px solid rgba(99, 102, 241,0.3)",
                             borderRadius: "8px",
                             display: "flex", alignItems: "center", justifyContent: "center",
                             fontSize: "16px"
@@ -165,7 +165,7 @@ export default function HistorySidebar({ open, onClose, user }) {
                     {!loading && !error && user && reviews.length === 0 && (
                         <Box sx={{ textAlign: "center", mt: 6, color: "#8b949e" }}>
                             <div style={{ fontSize: "40px", marginBottom: "12px" }}>🗂️</div>
-                            <Typography variant="body2" fontWeight="600" color="#c9d1d9">No reviews yet</Typography>
+                            <Typography variant="body2" fontWeight="600" color="#e6edf3">No reviews yet</Typography>
                             <Typography variant="caption" mt={0.5} display="block">
                                 Submit a code review to get started!
                             </Typography>
@@ -194,15 +194,15 @@ export default function HistorySidebar({ open, onClose, user }) {
                             <Box
                                 key={r.id}
                                 sx={{
-                                    background: isGithubRepo ? "rgba(16,22,34,0.9)" : "rgba(22,27,34,0.8)",
+                                    background: isGithubRepo ? "rgba(16,22,34,0.9)" : "rgba(10, 12, 20,0.8)",
                                     border: isGithubRepo
-                                        ? "1px solid rgba(99,102,241,0.22)"
-                                        : "1px solid rgba(99,102,241,0.12)",
+                                        ? "1px solid rgba(99, 102, 241,0.22)"
+                                        : "1px solid rgba(99, 102, 241,0.12)",
                                     borderRadius: "10px",
                                     marginBottom: "8px",
                                     overflow: "hidden",
                                     transition: "border-color 0.2s",
-                                    "&:hover": { borderColor: "rgba(99,102,241,0.35)" }
+                                    "&:hover": { borderColor: "rgba(99, 102, 241,0.35)" }
                                 }}
                             >
                                 {/* Card Header */}
@@ -223,7 +223,7 @@ export default function HistorySidebar({ open, onClose, user }) {
                                             <>
                                                 <span style={{ fontSize: "16px", flexShrink: 0 }}>🐙</span>
                                                 <Box sx={{ minWidth: 0 }}>
-                                                    <Typography variant="body2" color="#a5b4fc" fontWeight={700} fontSize="12px">
+                                                    <Typography variant="body2" color="#e6edf3" fontWeight={700} fontSize="12px">
                                                         GitHub Repo Review
                                                     </Typography>
                                                     {r.repo_url && (
@@ -247,7 +247,7 @@ export default function HistorySidebar({ open, onClose, user }) {
                                                         textTransform: "uppercase", flexShrink: 0
                                                     }}
                                                 />
-                                                <Typography variant="body2" color="#c9d1d9"
+                                                <Typography variant="body2" color="#e6edf3"
                                                     sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", fontSize: "12px", fontFamily: "'JetBrains Mono', monospace" }}>
                                                     {r.code?.split("\n")[0]?.trim() || "—"}
                                                 </Typography>
@@ -268,7 +268,7 @@ export default function HistorySidebar({ open, onClose, user }) {
 
                                 {/* Expanded Content */}
                                 {isExpanded && (
-                                    <Box sx={{ borderTop: "1px solid rgba(99,102,241,0.1)" }}>
+                                    <Box sx={{ borderTop: "1px solid rgba(99, 102, 241,0.1)" }}>
 
                                         {/* GITHUB REPO: file list dropdown + unified review */}
                                         {isGithubRepo ? (
@@ -289,7 +289,7 @@ export default function HistorySidebar({ open, onClose, user }) {
                                                         {areFilesExpanded && (
                                                             <Box sx={{
                                                                 background: "#010409",
-                                                                border: "1px solid rgba(99,102,241,0.1)",
+                                                                border: "1px solid rgba(99, 102, 241,0.1)",
                                                                 borderRadius: "6px",
                                                                 padding: "8px 10px",
                                                                 maxHeight: "140px", overflowY: "auto"
@@ -310,13 +310,13 @@ export default function HistorySidebar({ open, onClose, user }) {
                                                     AI Review
                                                 </Typography>
                                                 <Box sx={{
-                                                    mt: 0.5, background: "rgba(99,102,241,0.04)",
-                                                    border: "1px solid rgba(99,102,241,0.1)",
+                                                    mt: 0.5, background: "rgba(99, 102, 241,0.04)",
+                                                    border: "1px solid rgba(99, 102, 241,0.1)",
                                                     borderRadius: "6px", padding: "10px",
                                                     maxHeight: "280px", overflowY: "auto",
-                                                    fontSize: "12px", lineHeight: "1.6", color: "#c9d1d9",
+                                                    fontSize: "12px", lineHeight: "1.6", color: "#e6edf3",
                                                     "& h1, h2, h3": { color: "#e6edf3", fontWeight: 700, fontSize: "13px" },
-                                                    "& code": { background: "rgba(99,102,241,0.2)", padding: "1px 5px", borderRadius: "3px", fontFamily: "monospace", fontSize: "11px" },
+                                                    "& code": { background: "rgba(99, 102, 241,0.2)", padding: "1px 5px", borderRadius: "3px", fontFamily: "monospace", fontSize: "11px" },
                                                     "& pre": { background: "#010409", padding: "8px", borderRadius: "4px", overflow: "auto" },
                                                     "& p": { margin: "4px 0" }
                                                 }}>
@@ -337,13 +337,13 @@ export default function HistorySidebar({ open, onClose, user }) {
                                                 <Box sx={{ padding: "10px 14px 14px" }}>
                                                     <Typography variant="caption" color="#a855f7" fontWeight={700} letterSpacing="0.5px" textTransform="uppercase">AI Review</Typography>
                                                     <Box sx={{
-                                                        mt: 0.5, background: "rgba(99,102,241,0.04)",
-                                                        border: "1px solid rgba(99,102,241,0.1)",
+                                                        mt: 0.5, background: "rgba(99, 102, 241,0.04)",
+                                                        border: "1px solid rgba(99, 102, 241,0.1)",
                                                         borderRadius: "6px", padding: "10px",
                                                         maxHeight: "200px", overflowY: "auto",
-                                                        fontSize: "12px", lineHeight: "1.6", color: "#c9d1d9",
+                                                        fontSize: "12px", lineHeight: "1.6", color: "#e6edf3",
                                                         "& h1, h2, h3": { color: "#e6edf3", fontWeight: 700, fontSize: "13px" },
-                                                        "& code": { background: "rgba(99,102,241,0.2)", padding: "1px 5px", borderRadius: "3px", fontFamily: "monospace", fontSize: "11px" },
+                                                        "& code": { background: "rgba(99, 102, 241,0.2)", padding: "1px 5px", borderRadius: "3px", fontFamily: "monospace", fontSize: "11px" },
                                                         "& pre": { background: "#010409", padding: "8px", borderRadius: "4px", overflow: "auto" },
                                                         "& p": { margin: "4px 0" }
                                                     }}>
@@ -363,7 +363,7 @@ export default function HistorySidebar({ open, onClose, user }) {
                 {/* Footer */}
                 <Box sx={{
                     padding: "12px 16px",
-                    borderTop: "1px solid rgba(99,102,241,0.1)",
+                    borderTop: "1px solid rgba(99, 102, 241,0.1)",
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",
@@ -375,7 +375,7 @@ export default function HistorySidebar({ open, onClose, user }) {
                     <Typography
                         variant="caption"
                         color="#6366f1"
-                        sx={{ cursor: "pointer", "&:hover": { color: "#a5b4fc" } }}
+                        sx={{ cursor: "pointer", "&:hover": { color: "#e6edf3" } }}
                         onClick={loadReviews}
                     >
                         ↻ Refresh

@@ -73,9 +73,9 @@ export default function Signup() {
                 sx={{
                     width: "100%",
                     maxWidth: "420px",
-                    background: "rgba(13,17,23,0.7)",
+                    background: "rgba(10, 12, 20,0.7)",
                     backdropFilter: "blur(12px)",
-                    border: "1px solid rgba(99,102,241,0.2)",
+                    border: "1px solid rgba(99, 102, 241,0.2)",
                     borderRadius: "16px",
                     padding: "40px",
                     display: "flex",
@@ -87,8 +87,8 @@ export default function Signup() {
                 <div style={{ textAlign: "center", marginBottom: "8px" }}>
                     <div style={{
                         width: "48px", height: "48px",
-                        background: "rgba(99,102,241,0.12)",
-                        border: "1px solid rgba(99,102,241,0.3)",
+                        background: "rgba(99, 102, 241,0.12)",
+                        border: "1px solid rgba(99, 102, 241,0.3)",
                         borderRadius: "12px",
                         display: "flex", alignItems: "center", justifyContent: "center",
                         fontSize: "24px",
@@ -125,8 +125,8 @@ export default function Signup() {
                     sx={{
                         "& .MuiOutlinedInput-root": {
                             color: "#e6edf3",
-                            "& fieldset": { borderColor: "rgba(99,102,241,0.3)", borderRadius: "8px" },
-                            "&:hover fieldset": { borderColor: "rgba(99,102,241,0.6)" },
+                            "& fieldset": { borderColor: "rgba(99, 102, 241,0.3)", borderRadius: "8px" },
+                            "&:hover fieldset": { borderColor: "rgba(99, 102, 241,0.6)" },
                             "&.Mui-focused fieldset": { borderColor: "#6366f1" }
                         }
                     }}
@@ -143,8 +143,8 @@ export default function Signup() {
                     sx={{
                         "& .MuiOutlinedInput-root": {
                             color: "#e6edf3",
-                            "& fieldset": { borderColor: "rgba(99,102,241,0.3)", borderRadius: "8px" },
-                            "&:hover fieldset": { borderColor: "rgba(99,102,241,0.6)" },
+                            "& fieldset": { borderColor: "rgba(99, 102, 241,0.3)", borderRadius: "8px" },
+                            "&:hover fieldset": { borderColor: "rgba(99, 102, 241,0.6)" },
                             "&.Mui-focused fieldset": { borderColor: "#6366f1" }
                         }
                     }}
@@ -162,7 +162,7 @@ export default function Signup() {
                         textTransform: "none",
                         fontSize: "16px",
                         background: loading
-                            ? "#1e2230"
+                            ? "#0a0c14"
                             : "linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%)",
                         boxShadow: loading ? "none" : "0 4px 20px rgba(168, 85, 247, 0.4)",
                         "&:hover": {
@@ -170,7 +170,7 @@ export default function Signup() {
                             boxShadow: "0 8px 24px rgba(168, 85, 247, 0.6)",
                         },
                         "&.Mui-disabled": {
-                            background: "#1e2230",
+                            background: "#0a0c14",
                             color: "#555",
                         }
                     }}

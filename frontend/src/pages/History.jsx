@@ -86,8 +86,8 @@ export default function History() {
                 <Box display="flex" alignItems="center" gap={1.5} mb={1}>
                     <div style={{
                         width: "36px", height: "36px",
-                        background: "rgba(99,102,241,0.15)",
-                        border: "1px solid rgba(99,102,241,0.3)",
+                        background: "rgba(99, 102, 241,0.15)",
+                        border: "1px solid rgba(99, 102, 241,0.3)",
                         borderRadius: "10px",
                         display: "flex", alignItems: "center", justifyContent: "center",
                         fontSize: "18px"
@@ -127,7 +127,7 @@ export default function History() {
                     color: "#8b949e"
                 }}>
                     <div style={{ fontSize: "48px", marginBottom: "16px" }}>🗂️</div>
-                    <Typography variant="h6" fontWeight="600" color="#c9d1d9">No reviews yet</Typography>
+                    <Typography variant="h6" fontWeight="600" color="#e6edf3">No reviews yet</Typography>
                     <Typography variant="body2" mt={1}>
                         Submit your first code review from the home page!
                     </Typography>
@@ -139,14 +139,14 @@ export default function History() {
                 <Box
                     key={r.id}
                     sx={{
-                        background: "rgba(13,17,23,0.7)",
+                        background: "rgba(10, 12, 20,0.7)",
                         backdropFilter: "blur(12px)",
-                        border: "1px solid rgba(99,102,241,0.15)",
+                        border: "1px solid rgba(99, 102, 241,0.15)",
                         borderRadius: "12px",
                         marginBottom: "16px",
                         overflow: "hidden",
                         transition: "border-color 0.2s",
-                        "&:hover": { borderColor: "rgba(99,102,241,0.35)" }
+                        "&:hover": { borderColor: "rgba(99, 102, 241,0.35)" }
                     }}
                 >
                     {/* Card Header */}
@@ -176,7 +176,7 @@ export default function History() {
                             />
                             <Typography
                                 variant="body2"
-                                color="#c9d1d9"
+                                color="#e6edf3"
                                 sx={{
                                     maxWidth: "400px",
                                     overflow: "hidden",
@@ -199,7 +199,7 @@ export default function History() {
 
                     {/* Expanded Content */}
                     {expanded === index && (
-                        <Box sx={{ borderTop: "1px solid rgba(99,102,241,0.1)" }}>
+                        <Box sx={{ borderTop: "1px solid rgba(99, 102, 241,0.1)" }}>
                             {/* Code */}
                             <Box sx={{ padding: "16px 20px" }}>
                                 <Typography variant="caption" color="#8b949e" sx={{ fontWeight: 700, letterSpacing: "0.5px", textTransform: "uppercase" }}>
@@ -228,14 +228,14 @@ export default function History() {
                                     AI Review
                                 </Typography>
                                 <Box sx={{
-                                    mt: 1, background: "rgba(99,102,241,0.04)",
-                                    border: "1px solid rgba(99,102,241,0.1)",
+                                    mt: 1, background: "rgba(99, 102, 241,0.04)",
+                                    border: "1px solid rgba(99, 102, 241,0.1)",
                                     borderRadius: "8px", padding: "16px",
                                     fontSize: "14px", lineHeight: "1.7",
-                                    color: "#c9d1d9",
+                                    color: "#e6edf3",
                                     "& h1, h2, h3": { color: "#e6edf3", fontWeight: 700 },
                                     "& code": {
-                                        background: "rgba(99,102,241,0.2)",
+                                        background: "rgba(99, 102, 241,0.2)",
                                         padding: "2px 6px", borderRadius: "4px",
                                         fontFamily: "monospace"
                                     },

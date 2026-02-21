@@ -9,7 +9,7 @@ from auth import get_user_id_from_token
 from github_fetcher import fetch_combined_code, GitHubFetchError, RepoNotFoundError, RateLimitError
 
 app = FastAPI(
-    title = "Ai Code Reviewer API",
+    title = "SnapCode API",
     version = "1.0.0"
 )
 
@@ -39,7 +39,7 @@ class GithubReviewRequest(BaseModel):
 def health_check():
     return {
         "status": "Backend is running",
-        "message": "AI Code Reviewer API Ready"
+        "message": "SnapCode API Ready"
     }
 
 

@@ -112,27 +112,27 @@ export default function FileUpload({ setCode, setLanguage }) {
                     padding: "7px 16px",
                     borderRadius: "8px",
                     border: dragging
-                        ? "1px solid rgba(99,102,241,0.7)"
-                        : "1px solid rgba(99,102,241,0.25)",
+                        ? "1px solid rgba(99, 102, 241,0.7)"
+                        : "1px solid rgba(99, 102, 241,0.25)",
                     background: dragging
-                        ? "rgba(99,102,241,0.12)"
-                        : "rgba(99,102,241,0.06)",
+                        ? "rgba(99, 102, 241,0.12)"
+                        : "rgba(99, 102, 241,0.06)",
                     cursor: "pointer",
                     transition: "all 0.2s",
                     userSelect: "none",
-                    color: "#a5b4fc",
+                    color: "#e6edf3",
                     fontSize: "13px",
                     fontWeight: "600",
                     fontFamily: "'Inter', sans-serif",
                     whiteSpace: "nowrap",
-                    boxShadow: dragging ? "0 0 12px rgba(99,102,241,0.2)" : "none"
+                    boxShadow: dragging ? "0 0 12px rgba(99, 102, 241,0.2)" : "none"
                 }}
             >
                 <span style={{ fontSize: "15px" }}>📁</span>
                 {fileName ? (
                     <span style={{
                         maxWidth: "120px", overflow: "hidden",
-                        textOverflow: "ellipsis", color: "#c9d1d9"
+                        textOverflow: "ellipsis", color: "#e6edf3"
                     }}>
                         {fileName}
                     </span>

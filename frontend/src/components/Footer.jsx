@@ -9,8 +9,8 @@ export default function Footer() {
                 mt: 6,
                 py: 3,
                 px: 6,
-                borderTop: "1px solid rgba(99,102,241,0.12)",
-                background: "rgba(10,12,20,0.6)",
+                borderTop: "1px solid rgba(99, 102, 241,0.12)",
+                background: "rgba(10, 12, 20,0.6)",
                 backdropFilter: "blur(12px)",
                 display: "flex",
                 justifyContent: "space-between",
@@ -20,7 +20,7 @@ export default function Footer() {
             }}
         >
             <Typography variant="caption" color="#555" sx={{ fontFamily: "'Inter', sans-serif" }}>
-                ⚡ <strong style={{ color: "#8b949e" }}>AI Code Reviewer</strong>
+                ⚡ <strong style={{ color: "#8b949e" }}>SnapCode</strong>
                 {" "}· Built with FastAPI, React, Supabase &amp; Gemini AI
             </Typography>
 

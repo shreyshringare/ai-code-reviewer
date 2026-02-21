@@ -29,8 +29,8 @@ export default function ReviewOutput({ review, loading }) {
             height: "100%",
             minHeight: "520px",
             borderRadius: "12px",
-            border: "1px solid rgba(99,102,241,0.2)",
-            background: "rgba(13,17,23,0.7)",
+            border: "1px solid rgba(99, 102, 241,0.2)",
+            background: "rgba(10, 12, 20,0.7)",
             backdropFilter: "blur(12px)",
             boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
             overflow: "hidden",
@@ -43,14 +43,14 @@ export default function ReviewOutput({ review, loading }) {
                 justifyContent: "space-between",
                 alignItems: "center",
                 padding: "16px 20px",
-                borderBottom: "1px solid rgba(99,102,241,0.15)",
-                background: "rgba(99,102,241,0.06)",
+                borderBottom: "1px solid rgba(99, 102, 241,0.15)",
+                background: "rgba(99, 102, 241,0.06)",
                 flexShrink: 0,
             }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                     <div style={{
                         width: "28px", height: "28px",
-                        background: "rgba(168,85,247,0.2)",
+                        background: "rgba(168, 85, 247,0.2)",
                         borderRadius: "8px",
                         display: "flex", alignItems: "center", justifyContent: "center",
                         fontSize: "14px",
@@ -58,7 +58,7 @@ export default function ReviewOutput({ review, loading }) {
                     <span style={{
                         fontWeight: 700,
                         fontSize: "14px",
-                        color: "#c9d1d9",
+                        color: "#e6edf3",
                         letterSpacing: "0.3px",
                     }}>
                         AI Review Results
@@ -112,7 +112,7 @@ export default function ReviewOutput({ review, loading }) {
                                     : "rgba(255,255,255,0.06)",
                                 borderRadius: "8px",
                                 "&:hover": {
-                                    color: "#c9d1d9",
+                                    color: "#e6edf3",
                                     background: "rgba(255,255,255,0.08)",
                                 },
                                 transition: "all 0.2s ease",
@@ -147,12 +147,12 @@ export default function ReviewOutput({ review, loading }) {
                         <div style={{
                             width: "48px", height: "48px",
                             borderRadius: "50%",
-                            border: "3px solid rgba(99,102,241,0.15)",
+                            border: "3px solid rgba(99, 102, 241,0.15)",
                             borderTop: "3px solid #6366f1",
                             animation: "spin 1s linear infinite",
                         }} />
                         <div style={{ textAlign: "center" }}>
-                            <p style={{ margin: "0 0 6px", color: "#c9d1d9", fontWeight: 600, fontSize: "15px" }}>
+                            <p style={{ margin: "0 0 6px", color: "#e6edf3", fontWeight: 600, fontSize: "15px" }}>
                                 Analyzing your code...
                             </p>
                             <p style={{ margin: 0, color: "#8b949e", fontSize: "13px" }}>
@@ -189,8 +189,8 @@ export default function ReviewOutput({ review, loading }) {
                         {/* Icon decoration */}
                         <div style={{
                             width: "72px", height: "72px",
-                            background: "rgba(99,102,241,0.08)",
-                            border: "1px solid rgba(99,102,241,0.2)",
+                            background: "rgba(99, 102, 241,0.08)",
+                            border: "1px solid rgba(99, 102, 241,0.2)",
                             borderRadius: "20px",
                             display: "flex",
                             alignItems: "center",
@@ -205,7 +205,7 @@ export default function ReviewOutput({ review, loading }) {
                             </p>
                             <p style={{ margin: 0, color: "#555", fontSize: "13px", lineHeight: 1.6 }}>
                                 Paste your code on the left and click<br />
-                                <strong style={{ color: "#a5b4fc" }}>✨ Review Code</strong> to get started
+                                <strong style={{ color: "#e6edf3" }}>✨ Review Code</strong> to get started
                             </p>
                         </div>
 
@@ -253,8 +253,8 @@ export default function ReviewOutput({ review, loading }) {
                 .markdown-body ul, .markdown-body ol { margin-bottom: 1em; padding-left: 2em; }
                 .markdown-body li { margin-bottom: 0.25em; }
                 .markdown-body code {
-                    background: rgba(99,102,241,0.15);
-                    color: #a5b4fc;
+                    background: rgba(99, 102, 241,0.15);
+                    color: #e6edf3;
                     padding: 0.2em 0.4em;
                     border-radius: 4px;
                     font-family: 'Fira Code', monospace;

@@ -15,15 +15,15 @@ export default function CodeEditor({
         <div style={{
             borderRadius: "10px",
             overflow: "hidden",
-            border: "1px solid rgba(99,102,241,0.25)",
+            border: "1px solid rgba(99, 102, 241,0.25)",
             height: height,
             minHeight: "420px",
             background: "#0d1117",
-            boxShadow: "inset 0 2px 16px rgba(0,0,0,0.4), 0 0 0 1px rgba(99,102,241,0.1)",
+            boxShadow: "inset 0 2px 16px rgba(0,0,0,0.4), 0 0 0 1px rgba(99, 102, 241,0.1)",
             transition: "border-color 0.3s ease",
         }}
-            onFocus={(e) => e.currentTarget.style.borderColor = "rgba(99,102,241,0.6)"}
-            onBlur={(e) => e.currentTarget.style.borderColor = "rgba(99,102,241,0.25)"}
+            onFocus={(e) => e.currentTarget.style.borderColor = "rgba(99, 102, 241,0.6)"}
+            onBlur={(e) => e.currentTarget.style.borderColor = "rgba(99, 102, 241,0.25)"}
         >
             <Editor
                 height={height === "100%" ? "100%" : height}

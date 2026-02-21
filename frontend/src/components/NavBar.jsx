@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
+import logoImg from "../assets/SnapCode.svg";
 
 export default function Navbar({ user, onLogout, onLoginClick, onSignupClick, onHomeClick, onHistoryClick }) {
 
@@ -17,7 +18,7 @@ export default function Navbar({ user, onLogout, onLoginClick, onSignupClick, on
                 padding: "20px 48px",
                 background: "rgba(10, 12, 20, 0.6)",
                 backdropFilter: "blur(12px)",
-                borderBottom: "1px solid rgba(99,102,241,0.15)",
+                borderBottom: "1px solid rgba(99, 102, 241,0.15)",
                 position: "sticky",
                 top: 0,
                 zIndex: 50,
@@ -32,15 +33,17 @@ export default function Navbar({ user, onLogout, onLoginClick, onSignupClick, on
                 onClick={onHomeClick}
                 sx={{ cursor: "pointer" }}
             >
-                <div style={{
-                    width: "36px", height: "36px",
-                    background: "rgba(99,102,241,0.15)",
-                    border: "1px solid rgba(99,102,241,0.3)",
-                    borderRadius: "10px",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: "18px",
-                    boxShadow: "0 0 10px rgba(99,102,241,0.2)"
-                }}>⚡</div>
+                <img
+                    src={logoImg}
+                    alt="SnapCode Logo"
+                    style={{
+                        width: "36px",
+                        height: "36px",
+                        borderRadius: "8px",
+                        boxShadow: "0 0 10px rgba(99,102,241,0.2)",
+                        border: "1px solid rgba(99,102,241,0.3)",
+                    }}
+                />
                 <Typography
                     variant="h5"
                     fontWeight="900"
@@ -51,7 +54,7 @@ export default function Navbar({ user, onLogout, onLoginClick, onSignupClick, on
                         letterSpacing: "-0.5px"
                     }}
                 >
-                    AI Code Reviewer
+                    SnapCode
                 </Typography>
             </Box>
 
@@ -64,7 +67,7 @@ export default function Navbar({ user, onLogout, onLoginClick, onSignupClick, on
                             onClick={onLoginClick}
                             sx={{
                                 background: "rgba(255,255,255,0.05)",
-                                color: "#c9d1d9",
+                                color: "#e6edf3",
                                 border: "1px solid rgba(255,255,255,0.1)",
                                 padding: "6px 20px",
                                 borderRadius: "8px",
@@ -85,9 +88,9 @@ export default function Navbar({ user, onLogout, onLoginClick, onSignupClick, on
                             variant="contained"
                             onClick={onSignupClick}
                             sx={{
-                                background: "rgba(99,102,241,0.15)",
-                                color: "#a5b4fc",
-                                border: "1px solid rgba(99,102,241,0.3)",
+                                background: "rgba(99, 102, 241,0.15)",
+                                color: "#e6edf3",
+                                border: "1px solid rgba(99, 102, 241,0.3)",
                                 padding: "6px 20px",
                                 borderRadius: "8px",
                                 fontWeight: "600",
@@ -95,8 +98,8 @@ export default function Navbar({ user, onLogout, onLoginClick, onSignupClick, on
                                 fontSize: "14px",
                                 boxShadow: "none",
                                 "&:hover": {
-                                    background: "rgba(99,102,241,0.25)",
-                                    boxShadow: "0 0 15px rgba(99,102,241,0.2)",
+                                    background: "rgba(99, 102, 241,0.25)",
+                                    boxShadow: "0 0 15px rgba(99, 102, 241,0.2)",
                                 }
                             }}
                         >
@@ -124,9 +127,9 @@ export default function Navbar({ user, onLogout, onLoginClick, onSignupClick, on
                             variant="contained"
                             onClick={onHistoryClick}
                             sx={{
-                                background: "rgba(99,102,241,0.1)",
-                                color: "#a5b4fc",
-                                border: "1px solid rgba(99,102,241,0.2)",
+                                background: "rgba(99, 102, 241,0.1)",
+                                color: "#e6edf3",
+                                border: "1px solid rgba(99, 102, 241,0.2)",
                                 padding: "6px 16px",
                                 borderRadius: "8px",
                                 fontWeight: "600",
@@ -134,8 +137,8 @@ export default function Navbar({ user, onLogout, onLoginClick, onSignupClick, on
                                 fontSize: "14px",
                                 boxShadow: "none",
                                 "&:hover": {
-                                    background: "rgba(99,102,241,0.2)",
-                                    boxShadow: "0 0 12px rgba(99,102,241,0.2)",
+                                    background: "rgba(99, 102, 241,0.2)",
+                                    boxShadow: "0 0 12px rgba(99, 102, 241,0.2)",
                                 }
                             }}
                         >

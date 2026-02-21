@@ -69,8 +69,8 @@ export default function GithubReview({ user, setReview }) {
             <Box display="flex" alignItems="center" gap={1.5} mb={0.5}>
                 <div style={{
                     width: "30px", height: "30px",
-                    background: "rgba(99,102,241,0.15)",
-                    border: "1px solid rgba(99,102,241,0.3)",
+                    background: "rgba(99, 102, 241,0.15)",
+                    border: "1px solid rgba(99, 102, 241,0.3)",
                     borderRadius: "8px",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     fontSize: "15px"
@@ -96,7 +96,7 @@ export default function GithubReview({ user, setReview }) {
                         style={{
                             flex: 1,
                             background: "rgba(255,255,255,0.04)",
-                            border: "1px solid rgba(99,102,241,0.25)",
+                            border: "1px solid rgba(99, 102, 241,0.25)",
                             borderRadius: "8px",
                             padding: "10px 14px",
                             color: "#e6edf3",
@@ -105,14 +105,14 @@ export default function GithubReview({ user, setReview }) {
                             outline: "none",
                             transition: "border-color 0.2s",
                         }}
-                        onFocus={e => e.target.style.borderColor = "rgba(99,102,241,0.6)"}
-                        onBlur={e => e.target.style.borderColor = "rgba(99,102,241,0.25)"}
+                        onFocus={e => e.target.style.borderColor = "rgba(99, 102, 241,0.6)"}
+                        onBlur={e => e.target.style.borderColor = "rgba(99, 102, 241,0.25)"}
                     />
                     <button
                         type="submit"
                         disabled={loading || !repoUrl.trim()}
                         style={{
-                            background: loading ? "rgba(99,102,241,0.2)" : "rgba(99,102,241,0.85)",
+                            background: loading ? "rgba(99, 102, 241,0.2)" : "rgba(99, 102, 241,0.85)",
                             color: "#fff",
                             border: "none",
                             borderRadius: "8px",
@@ -181,16 +181,16 @@ export default function GithubReview({ user, setReview }) {
                             label={new URL(result.repo_url).pathname.slice(1)}
                             size="small"
                             sx={{
-                                background: "rgba(99,102,241,0.1)",
-                                color: "#a5b4fc",
-                                border: "1px solid rgba(99,102,241,0.2)",
+                                background: "rgba(99, 102, 241,0.1)",
+                                color: "#e6edf3",
+                                border: "1px solid rgba(99, 102, 241,0.2)",
                                 fontSize: "11px", fontWeight: 700
                             }}
                         />
                         <Typography
                             variant="caption"
                             color="#6366f1"
-                            sx={{ cursor: "pointer", "&:hover": { color: "#a5b4fc" } }}
+                            sx={{ cursor: "pointer", "&:hover": { color: "#e6edf3" } }}
                             onClick={() => setShowFiles(f => !f)}
                         >
                             {showFiles ? "▲ Hide files" : "▼ Files included"}
@@ -200,8 +200,8 @@ export default function GithubReview({ user, setReview }) {
                     {/* File list (collapsible) */}
                     {showFiles && (
                         <Box sx={{
-                            background: "rgba(10,12,20,0.8)",
-                            border: "1px solid rgba(99,102,241,0.1)",
+                            background: "rgba(10, 12, 20,0.8)",
+                            border: "1px solid rgba(99, 102, 241,0.1)",
                             borderRadius: "8px",
                             padding: "10px 14px",
                             marginBottom: "12px",
@@ -219,16 +219,16 @@ export default function GithubReview({ user, setReview }) {
 
                     {/* Unified review output */}
                     <Box sx={{
-                        background: "rgba(22,27,34,0.8)",
-                        border: "1px solid rgba(99,102,241,0.15)",
+                        background: "rgba(10, 12, 20,0.8)",
+                        border: "1px solid rgba(99, 102, 241,0.15)",
                         borderRadius: "10px",
                         padding: "18px",
                         fontSize: "13px", lineHeight: "1.75",
-                        color: "#c9d1d9",
+                        color: "#e6edf3",
                         "& h1,h2,h3": { color: "#e6edf3", fontWeight: 800, fontSize: "15px", marginTop: "16px" },
                         "& strong": { color: "#e6edf3" },
                         "& code": {
-                            background: "rgba(99,102,241,0.2)",
+                            background: "rgba(99, 102, 241,0.2)",
                             padding: "2px 6px", borderRadius: "4px",
                             fontFamily: "monospace", fontSize: "12px"
                         },

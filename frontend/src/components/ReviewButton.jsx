@@ -22,7 +22,7 @@ export default function ReviewButton({ onReview, loading }) {
                 transition: "all 0.3s ease-in-out",
 
                 background: loading
-                    ? "#1e2230"
+                    ? "#0a0c14"
                     : "linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%)",
 
                 boxShadow: loading
@@ -35,12 +35,12 @@ export default function ReviewButton({ onReview, loading }) {
                         ? "none"
                         : "0 8px 32px rgba(168, 85, 247, 0.55)",
                     background: loading
-                        ? "#1e2230"
+                        ? "#0a0c14"
                         : "linear-gradient(135deg, #4f52d8 0%, #9333ea 50%, #db2777 100%)",
                 },
 
                 "&.Mui-disabled": {
-                    background: "#1e2230",
+                    background: "#0a0c14",
                     color: "#555",
                 }
             }}

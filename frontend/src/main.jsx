@@ -9,7 +9,7 @@ const darkTheme = createTheme({
     mode: 'dark',
     background: {
       default: '#0a0c14',
-      paper: 'rgba(13,17,23,0.7)',
+      paper: 'rgba(10, 12, 20,0.7)',
     },
     primary: {
       main: '#6366f1',
@@ -24,7 +24,7 @@ const darkTheme = createTheme({
         root: {
           // Fix Chrome auto-fill white background block over dark theme
           '& input:-webkit-autofill': {
-            WebkitBoxShadow: '0 0 0 1000px #1c1e26 inset !important',
+            WebkitBoxShadow: '0 0 0 1000px #0a0c14 inset !important',
             WebkitTextFillColor: '#e6edf3 !important',
             transition: 'background-color 5000s ease-in-out 0s'
           }

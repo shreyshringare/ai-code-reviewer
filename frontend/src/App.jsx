@@ -158,17 +158,17 @@ export default function App() {
       }}>
         <div style={{
           position: "absolute", width: "600px", height: "600px",
-          background: "radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(99, 102, 241,0.12) 0%, transparent 70%)",
           top: "-150px", left: "-100px", borderRadius: "50%"
         }} />
         <div style={{
           position: "absolute", width: "500px", height: "500px",
-          background: "radial-gradient(circle, rgba(236,72,153,0.10) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(236, 72, 153,0.10) 0%, transparent 70%)",
           bottom: "-100px", right: "-100px", borderRadius: "50%"
         }} />
         <div style={{
           position: "absolute", width: "400px", height: "400px",
-          background: "radial-gradient(circle, rgba(168,85,247,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(168, 85, 247,0.08) 0%, transparent 70%)",
           top: "40%", left: "45%", borderRadius: "50%"
         }} />
       </div>
@@ -236,8 +236,8 @@ export default function App() {
 
             {/* File Upload card */}
             <div style={{
-              background: "rgba(22,27,34,0.8)",
-              border: "1px solid rgba(99,102,241,0.15)",
+              background: "rgba(10, 12, 20,0.8)",
+              border: "1px solid rgba(99, 102, 241,0.15)",
               borderRadius: "10px",
               padding: "14px 18px",
               display: "flex", alignItems: "center", gap: "10px",
@@ -249,8 +249,8 @@ export default function App() {
             {/* GitHub Review — compact inline form */}
             <div style={{
               flex: 1,
-              background: "rgba(22,27,34,0.8)",
-              border: "1px solid rgba(99,102,241,0.15)",
+              background: "rgba(10, 12, 20,0.8)",
+              border: "1px solid rgba(99, 102, 241,0.15)",
               borderRadius: "10px",
               padding: "14px 18px",
             }}>
@@ -263,16 +263,16 @@ export default function App() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <div style={{
-                  width: "26px", height: "26px", background: "rgba(99,102,241,0.2)",
+                  width: "26px", height: "26px", background: "rgba(99, 102, 241,0.2)",
                   borderRadius: "7px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px"
                 }}>📝</div>
-                <span style={{ fontWeight: 700, fontSize: "13px", color: "#c9d1d9" }}>Source Code</span>
+                <span style={{ fontWeight: 700, fontSize: "13px", color: "#e6edf3" }}>Source Code</span>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ fontSize: "12px", color: "#8b949e" }}>Auto-detected:</span>
                 <span style={{
-                  background: "rgba(99,102,241,0.15)", border: "1px solid rgba(99,102,241,0.3)",
-                  padding: "2px 10px", borderRadius: "6px", fontSize: "12px", color: "#a5b4fc", fontWeight: 600
+                  background: "rgba(99, 102, 241,0.15)", border: "1px solid rgba(99, 102, 241,0.3)",
+                  padding: "2px 10px", borderRadius: "6px", fontSize: "12px", color: "#e6edf3", fontWeight: 600
                 }}>{language}</span>
               </div>
             </div>
