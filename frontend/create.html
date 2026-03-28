@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Agent | SnapCode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ffb4ab",
+              "on-error-container": "#ffdad6",
+              "surface-container-high": "#2a292e",
+              "on-primary-fixed": "#000767",
+              "surface-bright": "#39393d",
+              "on-tertiary-fixed-variant": "#8c0053",
+              "inverse-surface": "#e4e1e7",
+              "secondary-container": "#6f00be",
+              "on-surface-variant": "#c7c4d7",
+              "surface-dim": "#131317",
+              "primary-container": "#7c87f3",
+              "on-secondary-container": "#d6a9ff",
+              "on-background": "#e4e1e7",
+              "secondary-fixed": "#f0dbff",
+              "on-tertiary-fixed": "#3e0022",
+              "surface-container-highest": "#353439",
+              "on-primary": "#131e8c",
+              "error-container": "#93000a",
+              "on-primary-container": "#081486",
+              "tertiary-container": "#f751a1",
+              "inverse-primary": "#4953bc",
+              "on-tertiary-container": "#570032",
+              "on-secondary-fixed-variant": "#6900b3",
+              "on-primary-fixed-variant": "#2f3aa3",
+              "tertiary-fixed": "#ffd9e4",
+              "tertiary": "#ffb0cd",
+              "primary-fixed": "#e0e0ff",
+              "surface-container-low": "#1b1b1f",
+              "on-secondary-fixed": "#2c0051",
+              "background": "#131317",
+              "surface": "#131317",
+              "secondary": "#ddb7ff",
+              "outline": "#908fa0",
+              "surface-container-lowest": "#0e0e12",
+              "outline-variant": "#464554",
+              "secondary-fixed-dim": "#ddb7ff",
+              "surface-variant": "#353439",
+              "surface-tint": "#bdc2ff",
+              "on-error": "#690005",
+              "tertiary-fixed-dim": "#ffb0cd",
+              "primary": "#bdc2ff",
+              "on-secondary": "#490080",
+              "surface-container": "#1f1f24",
+              "inverse-on-surface": "#303034",
+              "on-tertiary": "#640039",
+              "primary-fixed-dim": "#bdc2ff",
+              "on-surface": "#e4e1e7"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #131317;
+        background-image: 
+          radial-gradient(at 0% 0%, rgba(189, 194, 255, 0.05) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, rgba(221, 183, 255, 0.08) 0px, transparent 50%);
+      }
+      .glass-card {
+        background: rgba(53, 52, 57, 0.4);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #353439;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="font-body text-on-background min-h-screen antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131317]/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+<div class="flex items-center justify-between px-8 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#bdc2ff]">SnapCode</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-[#353439] hover:text-[#bdc2ff] transition-colors font-['Inter'] antialiased tracking-tight" href="#">Dashboard</a>
+<a class="text-[#bdc2ff] border-b-2 border-[#bdc2ff] pb-1 font-['Inter'] antialiased tracking-tight" href="#">Create Agent</a>
+<a class="text-[#353439] hover:text-[#bdc2ff] transition-colors font-['Inter'] antialiased tracking-tight" href="#">History</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-[#353439]/20 transition-all duration-200 rounded-full">notifications</button>
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:bg-[#353439]/20 transition-all duration-200 rounded-full">settings</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional developer in a dark studio setting with soft blue ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD653pnqz8ZCtnFbLjcEXpnaeivHAlSoBI-HOs87p_FlqTd4Q6hfNfyDCdLhJkKQsFUaxzvh3QR9VhENQyhsfVnfIEdt9QfYGpJ3J0gPaw9lFpwl96P_jViNo7Qgg39XnvN_zzW3M1RBeLixufnahTxlij0_3WP1PCPv6V4__LIxAi9ImlK5V1HKRBX7NVy7k2PElvNRa3KQVBYrapOn4Ycg39NuWfxjO_S7Yu_rk-QPpYBOfLjAh1n3hcZguwHH5f65wnEYK-LZ7k"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-32 pb-20 px-6 flex flex-col items-center justify-center">
+<!-- Success Toast (Hidden/Floating State) -->
+<div class="fixed top-24 right-8 z-[60] flex items-center gap-3 bg-surface-container-high/90 backdrop-blur-lg border-l-4 border-primary px-6 py-4 rounded-xl shadow-2xl translate-x-[120%] md:translate-x-0 opacity-0 md:opacity-100 pointer-events-none transition-all duration-500">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex flex-col">
+<p class="text-sm font-semibold text-on-surface">Agent Logic Core v2.4 initialized</p>
+<p class="text-xs text-on-surface-variant">Ready for deployment to production clusters.</p>
+</div>
+</div>
+<!-- Create Agent Form Card -->
+<div class="w-full max-w-2xl glass-card rounded-[2rem] p-10 md:p-14 relative overflow-hidden">
+<!-- Decorative Ambient Glow inside card -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary/10 blur-[80px] rounded-full"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/10 blur-[80px] rounded-full"></div>
+<!-- Header -->
+<div class="relative z-10 mb-12">
+<h1 class="text-4xl font-bold tracking-tight text-on-surface mb-2">Create AI Agent</h1>
+<p class="text-on-surface-variant text-lg font-light">Customize your code review assistant</p>
+</div>
+<!-- Form -->
+<form class="relative z-10 space-y-10">
+<!-- Agent Name -->
+<div class="space-y-3">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Agent Name</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">person</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 text-on-surface placeholder:text-outline-variant focus:ring-2 focus:ring-primary/40 transition-all outline-none" placeholder="e.g. Production Sentinel" type="text"/>
+</div>
+</div>
+<!-- Description -->
+<div class="space-y-3">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Description</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-5 text-outline-variant group-focus-within:text-primary transition-colors">description</span>
+<textarea class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 text-on-surface placeholder:text-outline-variant focus:ring-2 focus:ring-primary/40 transition-all outline-none resize-none custom-scrollbar" placeholder="Describe the primary mission of this agent..." rows="3"></textarea>
+</div>
+</div>
+<!-- Model Selection -->
+<div class="space-y-3">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Model Selection</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">smart_toy</span>
+<select class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-10 text-on-surface focus:ring-2 focus:ring-primary/40 transition-all outline-none appearance-none">
+<option>Logic Core v2.4 (High Accuracy)</option>
+<option>Security Guard v1.2 (Vuln Scanning)</option>
+<option>Performance Pro v3.0 (Latency Focus)</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Optional Settings (Toggles) -->
+<div class="space-y-6 pt-4">
+<label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant px-1">Agent Capabilities</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Toggle Item 1 -->
+<label class="flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest/50 hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-on-surface">Auto-approve fixes</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Small logic patches</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-10 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</div>
+</label>
+<!-- Toggle Item 2 -->
+<label class="flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest/50 hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-on-surface">Strict Logic Checks</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Zero-tolerance mode</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-10 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</div>
+</label>
+<!-- Toggle Item 3 -->
+<label class="flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest/50 hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-on-surface">Performance Benchmarking</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Latency impact analysis</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-10 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</div>
+</label>
+<!-- Toggle Item 4 -->
+<label class="flex items-center justify-between p-4 rounded-xl bg-surface-container-lowest/50 hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-on-surface">Semantic Context</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Read full repository</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-10 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</div>
+</label>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="pt-6">
+<button class="w-full bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-fixed font-bold py-5 rounded-xl shadow-[0_20px_50px_rgba(124,135,243,0.3)] hover:shadow-[0_20px_60px_rgba(124,135,243,0.5)] hover:scale-[1.01] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3" type="button">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+                        Create Agent
+                    </button>
+<p class="text-center text-[10px] text-on-surface-variant/60 mt-6 tracking-widest uppercase">Initializing neural weights upon creation</p>
+</div>
+</form>
+</div>
+<!-- Footer Metadata -->
+<div class="mt-12 flex gap-8 text-[10px] font-mono text-outline-variant uppercase tracking-[0.2em]">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+                API Status: Nominal
+            </div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary/40"></span>
+                Cluster: Us-East-01
+            </div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary/40"></span>
+                Encryption: AES-256
+            </div>
+</div>
+</main>
+</body></html>

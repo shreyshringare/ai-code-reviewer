@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SnapCode - Sign In</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Barlow+Condensed:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#1f1f24",
+              "on-surface-variant": "#c7c4d7",
+              "background": "#131317",
+              "outline-variant": "#464554",
+              "on-secondary-container": "#d6a9ff",
+              "surface-tint": "#bdc2ff",
+              "surface": "#131317",
+              "secondary-fixed-dim": "#ddb7ff",
+              "secondary-container": "#6f00be",
+              "on-background": "#e4e1e7",
+              "surface-bright": "#39393d",
+              "on-primary-fixed": "#000767",
+              "surface-container-high": "#2a292e",
+              "inverse-on-surface": "#303034",
+              "on-primary-container": "#081486",
+              "surface-dim": "#131317",
+              "on-tertiary-fixed": "#3e0022",
+              "on-surface": "#e4e1e7",
+              "secondary-fixed": "#f0dbff",
+              "on-primary": "#131e8c",
+              "error-container": "#93000a",
+              "surface-container-low": "#1b1b1f",
+              "on-secondary": "#490080",
+              "tertiary-fixed-dim": "#ffb0cd",
+              "surface-container-lowest": "#0e0e12",
+              "on-tertiary-container": "#570032",
+              "primary-fixed": "#e0e0ff",
+              "secondary": "#ddb7ff",
+              "on-primary-fixed-variant": "#2f3aa3",
+              "on-tertiary": "#640039",
+              "inverse-primary": "#4953bc",
+              "on-secondary-fixed": "#2c0051",
+              "error": "#ffb4ab",
+              "on-secondary-fixed-variant": "#6900b3",
+              "primary-fixed-dim": "#bdc2ff",
+              "inverse-surface": "#e4e1e7",
+              "surface-container-highest": "#353439",
+              "on-tertiary-fixed-variant": "#8c0053",
+              "on-error": "#690005",
+              "outline": "#908fa0",
+              "tertiary-container": "#f751a1",
+              "tertiary": "#ffb0cd",
+              "primary": "#bdc2ff",
+              "surface-variant": "#353439",
+              "primary-container": "#7c87f3",
+              "tertiary-fixed": "#ffd9e4",
+              "on-error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Barlow Condensed", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"],
+              "mono": ["JetBrains Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style type="text/tailwindcss">
+      .glass-morphism {
+        background: rgba(10, 10, 14, 0.45);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+      }
+      .neural-gradient {
+        background: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
+      }
+      .grid-pattern {
+        background-image: radial-gradient(rgba(189, 194, 255, 0.1) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      @keyframes scroll-ascii {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
+      }
+      .ascii-scroller {
+        animation: scroll-ascii 30s linear infinite;
+      }
+      .glitch-effect {
+        animation: glitch-anim 4s infinite linear alternate-reverse;
+      }
+      @keyframes glitch-anim {
+        0% { opacity: 0.1; }
+        10% { opacity: 0.15; transform: translateX(-1px); }
+        20% { opacity: 0.1; transform: translateX(1px); }
+        50% { opacity: 0.12; }
+        90% { opacity: 0.1; }
+        100% { opacity: 0.15; }
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen overflow-x-hidden">
+<div class="flex flex-col md:flex-row min-h-screen relative">
+<div class="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-[#0A0A0E] border-r border-outline-variant/10">
+<div class="absolute inset-0 neural-gradient"></div>
+<div class="absolute inset-0 grid-pattern opacity-30"></div>
+<!-- ASCII Background Section -->
+<div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none opacity-[0.12] glitch-effect">
+<div class="ascii-scroller whitespace-pre font-mono text-[10px] leading-none text-[#6366F1]">
+/ \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \
+| 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 | 0 |
+\ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ /
+  [ + ] LOG_INIT: x0249583_KERNEL_STATUS_OK
+  { "id": "wireframe_node", "pos": [12.4, 0.9, -4.2] }
+  ////////////////////////////////////////////////////////////
+  &lt; CODE_STREAM_ACTIVE &gt;
+  01011001 01101111 01110101 00100000 01100001 01110010 01100101
+  \__________________________________________________________/
+  | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+  [ * ] TRACE: 0xDEADBEEF &gt;&gt; REDIRECTING_TO_CORE
+  |----------------------------------------------------------|
+  |  /\      /\      /\      /\      /\      /\      /\      |
+  | /  \    /  \    /  \    /  \    /  \    /  \    /  \     |
+  |/    \  /    \  /    \  /    \  /    \  /    \  /    \    |
+  |\    /  \    /  \    /  \    /  \    /  \    /  \    /    |
+  | \  /    \  /    \  /    \  /    \  /    \  /    \  /     |
+  |  \/      \/      \/      \/      \/      \/      \/      |
+  |----------------------------------------------------------|
+  &gt; analyzing_patterns... [OK]
+  &gt; detecting_anomalies... [3 flagged]
+  &gt; optimization_sequence: [|||||||||||||||||||    ] 74%
+  01110111 01100001 01110100 01100011 01101000 01101001 01101110
+  / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \
+  | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 | 0 | 1 | 0 |
+  \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ /
+  [ + ] LOG_INIT: x0249583_KERNEL_STATUS_OK
+  { "id": "wireframe_node", "pos": [12.4, 0.9, -4.2] }
+  ////////////////////////////////////////////////////////////
+  &lt; CODE_STREAM_ACTIVE &gt;
+  01011001 01101111 01110101 00100000 01100001 01110010 01100101
+  \__________________________________________________________/
+  | | | | | | | | | | | | | | | | | | | | | | | | | | | | | |
+  [ * ] TRACE: 0xDEADBEEF &gt;&gt; REDIRECTING_TO_CORE
+  |----------------------------------------------------------|
+  |  /\      /\      /\      /\      /\      /\      /\      |
+  | /  \    /  \    /  \    /  \    /  \    /  \    /  \     |
+  |/    \  /    \  /    \  /    \  /    \  /    \  /    \    |
+  |\    /  \    /  \    /  \    /  \    /  \    /  \    /    |
+  | \  /    \  /    \  /    \  /    \  /    \  /    \  /     |
+  |  \/      \/      \/      \/      \/      \/      \/      |
+  |----------------------------------------------------------|
+  </div>
+</div>
+<div class="relative z-10 w-full h-full flex flex-col justify-center p-20">
+<div class="space-y-8 max-w-lg">
+<div class="w-16 h-1 bg-primary/40 rounded-full"></div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 text-primary/40">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-mono text-xs tracking-widest uppercase">Initializing Core...</span>
+</div>
+<div class="font-mono text-sm text-on-surface-variant/30 leading-relaxed">
+<p>&gt; scanning_repository... [OK]</p>
+<p>&gt; analyzing_patterns... [OK]</p>
+<p>&gt; detecting_anomalies... [3 flagged]</p>
+<p>&gt; optimizing_logic_structures... [74%]</p>
+</div>
+</div>
+<div class="relative aspect-square w-full max-w-md opacity-40">
+<svg class="w-full h-full" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<path class="text-primary/60" d="M40,20 L160,20 L160,180 L40,180 Z" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+<circle class="text-secondary/50" cx="100" cy="100" fill="none" r="60" stroke="currentColor" stroke-dasharray="4,4" stroke-width="0.2"></circle>
+<path class="text-outline/30" d="M100,40 L100,160 M40,100 L160,100" stroke="currentColor" stroke-width="0.2"></path>
+<g class="text-primary">
+<circle cx="100" cy="40" fill="currentColor" r="2"></circle>
+<circle cx="160" cy="100" fill="currentColor" r="2"></circle>
+<circle cx="100" cy="160" fill="currentColor" r="2"></circle>
+<circle cx="40" cy="100" fill="currentColor" r="2"></circle>
+</g>
+</svg>
+</div>
+</div>
+</div>
+<div class="absolute top-1/4 -right-20 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-1/4 -left-20 w-64 h-64 bg-secondary/10 blur-[100px] rounded-full"></div>
+</div>
+<div class="w-full lg:w-1/2 flex flex-col relative z-20">
+<nav class="w-full p-6 flex items-center justify-between lg:justify-end gap-8 bg-transparent">
+<div class="lg:hidden text-xl font-bold tracking-tighter text-[#bdc2ff]">SnapCode</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant/60 hover:text-primary transition-colors text-sm font-medium" href="#">Docs</a>
+<a class="text-on-surface-variant/60 hover:text-primary transition-colors text-sm font-medium" href="#">Pricing</a>
+<a class="text-on-surface-variant/60 hover:text-primary transition-colors text-sm font-medium" href="#">Changelog</a>
+</div>
+<button class="px-5 py-2 rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary/20 transition-all text-sm border border-primary/20">Sign Up</button>
+</nav>
+<main class="flex-grow flex items-center justify-center p-6 md:p-12">
+<div class="w-full max-w-md">
+<div class="glass-morphism rounded-2xl p-8 md:p-10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.6)] border border-outline-variant/15 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+<div class="text-center mb-10">
+<h1 class="text-4xl font-headline font-bold uppercase tracking-tight text-on-background mb-3">Welcome to SnapCode</h1>
+<p class="text-on-surface-variant/70 text-sm font-body tracking-normal">Unlock the Future of Code with AI.</p>
+</div>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant/40 ml-1" for="email">Email Address</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline/60 text-[20px] group-focus-within:text-primary transition-colors">mail</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-3 bg-surface-container-highest/50 border-none rounded-xl text-on-surface placeholder:text-outline/30 focus:ring-2 focus:ring-primary/30 focus:bg-surface-container-high transition-all outline-none" id="email" name="email" placeholder="dev@snapcode.ai" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-end px-1">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant/40" for="password">Password</label>
+<a class="text-[10px] uppercase tracking-widest font-bold text-tertiary-fixed-dim/60 hover:text-tertiary transition-colors" href="#">Forgot?</a>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline/60 text-[20px] group-focus-within:text-primary transition-colors">lock</span>
+</div>
+<input class="block w-full pl-11 pr-11 py-3 bg-surface-container-highest/50 border-2 border-error/10 rounded-xl text-on-surface placeholder:text-outline/30 focus:ring-2 focus:ring-primary/30 focus:bg-surface-container-high transition-all outline-none" id="password" name="password" placeholder="••••••••" type="password"/>
+<div class="absolute inset-y-0 right-0 pr-3.5 flex items-center">
+<span class="material-symbols-outlined text-error/80 text-[20px]">error</span>
+</div>
+</div>
+<p class="text-[11px] text-error/70 mt-1 ml-1 flex items-center gap-1">
+                Password is required to continue
+              </p>
+</div>
+<div class="flex items-center px-1">
+<label class="relative inline-flex items-center cursor-pointer group">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-outline/50 after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container peer-checked:after:bg-on-primary"></div>
+<span class="ml-3 text-sm text-on-surface-variant/70 font-medium">Remember me</span>
+</label>
+</div>
+<div class="pt-2 space-y-4">
+<button class="w-full py-4 px-4 bg-primary text-on-primary-fixed font-bold rounded-xl shadow-[0_10px_30px_rgba(189,194,255,0.2)] hover:shadow-[0_15px_40px_rgba(189,194,255,0.3)] hover:brightness-110 active:scale-[0.98] transition-all duration-300" type="submit">
+                Login
+              </button>
+<div class="text-center">
+<p class="text-xs text-on-surface-variant/50">
+                  New to the obsidian? 
+                  <a class="text-secondary ml-1 font-semibold hover:underline" href="#">Create account</a>
+</p>
+</div>
+</div>
+</form>
+<div class="mt-8 flex items-center gap-4">
+<div class="flex-1 h-[1px] bg-outline-variant/10"></div>
+<span class="text-[9px] uppercase tracking-[0.2em] text-outline/40 font-bold">Or continue with</span>
+<div class="flex-1 h-[1px] bg-outline-variant/10"></div>
+</div>
+<div class="mt-6 flex gap-3">
+<button class="flex-1 flex items-center justify-center py-3 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container-high transition-all group">
+<img alt="Google" class="w-5 h-5 opacity-50 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTVPFofb-FdhNNbGjAr1Q78ZErqWJ3RU0VCxZlIRm7N1PUGrPn3LYGeo61K9KFvZzknJTEY5k95q5Jbvz7uSoqRj3dfVKsVHQbyEtpDFsxs12AcwZrLfjppO-JyIVR3UHAsmum8OinNHiFkcLQ7e6Oghgzax-N3QNFmJ0JEM_YGhT2Asgmkf5ubLl-FDdjbJ8cXgWH46_HqY1uIct8fYi2oiU1GrCLPPByqxgvNiYfCPJyt72hYdzkD-S_7u0VBIytKijoMwDF2do"/>
+</button>
+<button class="flex-1 flex items-center justify-center py-3 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container-high transition-all group">
+<svg class="w-5 h-5 fill-on-surface/40 group-hover:fill-on-surface transition-colors" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+</button>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<div class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-high/20 border border-outline-variant/10">
+<span class="flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-[9px] font-mono uppercase tracking-widest text-on-surface-variant/40">Network Stable</span>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full p-8 mt-auto flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="text-[10px] font-mono uppercase tracking-widest text-on-surface-variant/30 text-center md:text-left">
+        © 2026 SnapCode AI. For the obsidian deep.
+      </div>
+<div class="flex items-center gap-6">
+<a class="text-[10px] font-mono uppercase tracking-widest text-on-surface-variant/30 hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-[10px] font-mono uppercase tracking-widest text-on-surface-variant/30 hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-[10px] font-mono uppercase tracking-widest text-on-surface-variant/30 hover:text-primary transition-colors" href="#">Status</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="fixed inset-0 pointer-events-none opacity-[0.02] z-[-1]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0sTwRpDyUARYmjN73ODr8be_4Q8EA281-tGdPAmQcuw0pTzj1R33vAWarYS7gyBrZRibcic9obvz9Fu46MPMxLPxpLEPTJ6aNYnC--Dz5PALz2uBsAG9IBra4uPeU9WKdduJfing2QXwMmnpJ0TzGrDaMbudBoyA2GUYFcMqkYUtknrABAoVmuvFD5A0HdEMqZGZqSOGVQIFAGQ76OxgETx_PgCZxbz5mZxyYXmZXiKJqeqiPdaZ6c85n6l7LqOWSEy2brOO__-s');"></div>
+</body></html>

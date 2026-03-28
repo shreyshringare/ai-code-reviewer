@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(dir \"D:\\\\Projects\\\\ai_code_reviewer\\\\ai-code-reviewer-main\" /b)",
+      "Bash(timeout 5 node server.js)",
+      "Bash(npx vite:*)",
+      "Bash(npx next:*)",
+      "WebSearch",
+      "WebFetch(domain:stitch.withgoogle.com)",
+      "WebFetch(domain:blog.google)",
+      "WebFetch(domain:almcorp.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(node --check server.js)",
+      "Bash(node --check auth.js)",
+      "Bash(node --check reviewer.js)",
+      "Bash(rm -rf \"D:/Projects/ai_code_reviewer/ai-code-reviewer-main/frontend\")",
+      "Bash(mv \"D:/Projects/ai_code_reviewer/ai-code-reviewer-main/mcp-backend\" \"D:/Projects/ai_code_reviewer/ai-code-reviewer-main/frontend\")",
+      "Bash(cmd /c \"rmdir /s /q frontend\")",
+      "Bash(powershell -Command \"Remove-Item -Recurse -Force frontend\")",
+      "Bash(mv frontend:*)",
+      "Bash(mv mcp-backend:*)",
+      "Bash(powershell -Command \"Rename-Item -Path ''frontend'' -NewName ''frontend-legacy'' -Force\")",
+      "Bash(powershell -Command \"Get-Process | Where-Object {$_.Path -like '*ai-code-reviewer*' -or $_.MainWindowTitle -like '*frontend*' -or $_.Name -like '*node*' -or $_.Name -like '*vite*'} | Select-Object Id, Name, Path | Format-List\")",
+      "Bash(powershell -Command \"Get-Process -Name node -ErrorAction SilentlyContinue | Select-Object Id, Name | Format-Table\")",
+      "Bash(powershell -Command \"handle64.exe ''ai-code-reviewer-main\\\\frontend'' 2>nul\")",
+      "Bash(powershell -Command \"\\(Get-Process -Name node | ForEach-Object { try { $_.MainModule.FileName } catch {} }\\) | Select-String ''ai-code''\")",
+      "Bash(cd:*)",
+      "Bash(powershell -Command \"Rename-Item -Path ''mcp-backend'' -NewName ''web''\")",
+      "Bash(powershell -Command \"Get-NetTCPConnection -LocalPort 3000,5173,8000 -State Listen -ErrorAction SilentlyContinue | Select-Object LocalPort, OwningProcess | ForEach-Object { \\\\$proc = Get-Process -Id \\\\$_.OwningProcess -ErrorAction SilentlyContinue; [PSCustomObject]@{Port=\\\\$_.LocalPort; PID=\\\\$_.OwningProcess; Name=\\\\$proc.Name} }\" 2>/dev/null)",
+      "Bash(powershell -Command \"Stop-Process -Id 16036, 22444 -Force\")",
+      "Bash(powershell -Command \"Remove-Item -Recurse -Force ''D:/Projects/ai_code_reviewer/ai-code-reviewer-main/frontend-legacy''\")",
+      "Bash(rm -f build.log build_error.log build_final.log build_final_v2.log build_final_v3.log)",
+      "Bash(ls *.log)"
+    ]
+  }
+}

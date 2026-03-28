@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SnapCode - Create Account</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container": "#0D0D11",
+            "on-primary-fixed": "#000767",
+            "on-tertiary": "#640039",
+            "on-tertiary-container": "#570032",
+            "on-tertiary-fixed-variant": "#8c0053",
+            "secondary-container": "#6f00be",
+            "primary": "#bdc2ff",
+            "on-primary-container": "#081486",
+            "error-container": "#93000a",
+            "tertiary-fixed": "#ffd9e4",
+            "primary-fixed": "#e0e0ff",
+            "inverse-surface": "#e4e1e7",
+            "surface-container-high": "#16161B",
+            "secondary-fixed": "#f0dbff",
+            "tertiary-fixed-dim": "#ffb0cd",
+            "on-secondary-container": "#d6a9ff",
+            "error": "#ffb4ab",
+            "inverse-on-surface": "#303034",
+            "on-surface": "#e4e1e7",
+            "on-primary": "#131e8c",
+            "primary-container": "#7c87f3",
+            "surface-dim": "#0A0A0E",
+            "surface": "#0A0A0E",
+            "on-tertiary-fixed": "#3e0022",
+            "on-primary-fixed-variant": "#2f3aa3",
+            "inverse-primary": "#4953bc",
+            "on-background": "#e4e1e7",
+            "surface-tint": "#bdc2ff",
+            "surface-container-highest": "#1c1c21",
+            "secondary-fixed-dim": "#ddb7ff",
+            "on-surface-variant": "#9ca3af",
+            "outline": "#374151",
+            "background": "#0A0A0E",
+            "surface-variant": "#1c1c21",
+            "surface-container-low": "#111116",
+            "on-error-container": "#ffdad6",
+            "on-secondary-fixed": "#2c0051",
+            "primary-fixed-dim": "#bdc2ff",
+            "outline-variant": "#27272A",
+            "tertiary": "#ffb0cd",
+            "on-error": "#690005",
+            "surface-container-lowest": "#08080C",
+            "on-secondary": "#490080",
+            "on-secondary-fixed-variant": "#6900b3",
+            "secondary": "#ddb7ff",
+            "surface-bright": "#1F1F24",
+            "tertiary-container": "#f751a1"
+          },
+          fontFamily: {
+            "headline": ["Inter"],
+            "body": ["Inter"],
+            "label": ["Inter"],
+            "mono": ["JetBrains Mono"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "1rem"},
+        },
+      },
+    }
+  </script>
+<style>
+    .glass-panel {
+      background: rgba(13, 13, 17, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+    }
+    .ascii-scan-line {
+      background: linear-gradient(to bottom, transparent, #bdc2ff11, transparent);
+      height: 150px;
+      width: 100%;
+      position: absolute;
+      top: -150px;
+      animation: scan 10s linear infinite;
+    }
+    @keyframes scan {
+      0% { top: -150px; }
+      100% { top: 110%; }
+    }
+    .glow-bg {
+      background: radial-gradient(circle at 20% 30%, rgba(189, 194, 255, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(221, 183, 255, 0.05) 0%, transparent 50%);
+    }
+    .wireframe-box {
+      border: 1px dashed rgba(189, 194, 255, 0.15);
+      position: relative;
+    }
+    .wireframe-dot {
+      width: 6px;
+      height: 6px;
+      background: rgba(189, 194, 255, 0.4);
+      border-radius: 50%;
+      position: absolute;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 min-h-screen relative overflow-hidden flex flex-col items-center justify-center glow-bg">
+<!-- Background Layer: ASCII & Terminal Content -->
+<div class="fixed inset-0 pointer-events-none z-0 opacity-30 overflow-hidden flex">
+<div class="w-1/2 h-full p-12 font-mono text-[11px] text-primary/40 leading-relaxed overflow-hidden">
+<div class="space-y-4">
+<div class="flex items-center gap-2 mb-6">
+<span class="w-2 h-2 rounded-full bg-primary/60 animate-pulse"></span>
+<span class="text-primary/60 uppercase tracking-widest text-xs">INITIALIZING CORE...</span>
+</div>
+<div class="space-y-1">
+<p>&gt; analyzing_patterns... [OK]</p>
+<p>&gt; detecting_anomalies... [3 flagged]</p>
+<p>&gt; optimization_sequence: [||||||||||||||||||||||||| ] 74%</p>
+<p>01110111 01101001 01110100 01100011 01101000 01101001 01101110</p>
+<p>/ \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \</p>
+<p>[ + ] LOG_INIT: x0249583_KERNEL_STATUS_OK</p>
+<p>} "id": "wireframe_node", "pos": [12.4, 0.9, -4.2] }</p>
+<p>/////////////////////////////////////////////////////////////////</p>
+<p>&lt; CODE_STREAM_ACTIVE &gt;</p>
+<p>01011001 01101111 01110101 00100000 01100001 01110010 01100101</p>
+</div>
+<div class="pt-8 opacity-20">
+<pre class="leading-none">          +--------------------------------------------+
+          |  * ] TRACE: 0xDEADBEEF &gt;&gt; REDIRECTING_TO_CORE |
+          +--------------------------------------------+
+        </pre>
+</div>
+<div class="mt-20 ml-12 w-64 h-64 wireframe-box rounded-lg flex items-center justify-center">
+<div class="w-48 h-48 border border-primary/10 rounded-full border-dashed flex items-center justify-center relative">
+<div class="wireframe-dot -top-0.5 left-1/2 -translate-x-1/2"></div>
+<div class="wireframe-dot -bottom-0.5 left-1/2 -translate-x-1/2"></div>
+<div class="wireframe-dot top-1/2 -left-0.5 -translate-y-1/2"></div>
+<div class="wireframe-dot top-1/2 -right-0.5 -translate-y-1/2"></div>
+</div>
+</div>
+</div>
+<div class="ascii-scan-line"></div>
+</div>
+</div>
+<!-- Header/Brand -->
+<header class="absolute top-0 left-0 right-0 p-8 flex justify-between items-center z-20 max-w-7xl mx-auto w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<span class="text-xl font-bold tracking-tighter text-on-surface">SnapCode</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 text-sm font-medium text-on-surface-variant/80">
+<a class="hover:text-primary transition-colors" href="#">Docs</a>
+<a class="hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="hover:text-primary transition-colors" href="#">Changelog</a>
+<a class="bg-surface-container-high px-4 py-2 rounded-lg border border-outline-variant/30 hover:bg-surface-container-highest transition-all" href="#">Sign In</a>
+</nav>
+</header>
+<!-- Central Content: Centered vertically and horizontally -->
+<main class="w-full h-full flex items-center justify-center px-6 relative z-10">
+<div class="w-full max-w-md space-y-10">
+<header class="text-center space-y-3">
+<h1 class="text-5xl font-bold tracking-tight text-on-surface uppercase italic">Join the elite.</h1>
+<p class="text-on-surface-variant font-medium text-sm tracking-wide">Engineered for the modern developer workflow.</p>
+</header>
+<div class="glass-panel p-10 rounded-2xl">
+<form class="space-y-6">
+<!-- Full Name -->
+<div class="space-y-2">
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.15em] ml-1">Full Name</label>
+<div class="group relative flex items-center bg-surface-container-low/80 border border-outline-variant/30 rounded-lg focus-within:border-primary/50 transition-all">
+<div class="pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-lg group-focus-within:text-primary transition-colors">person</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline/40 py-3.5 px-4 rounded-lg outline-none text-sm" placeholder="Nikola Tesla" type="text"/>
+</div>
+</div>
+<!-- Email Address -->
+<div class="space-y-2">
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.15em] ml-1">Email Address</label>
+<div class="group relative flex items-center bg-surface-container-low/80 border border-outline-variant/30 rounded-lg focus-within:border-primary/50 transition-all">
+<div class="pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-lg group-focus-within:text-primary transition-colors">mail</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline/40 py-3.5 px-4 rounded-lg outline-none text-sm" placeholder="developer@snapcode.dev" type="email"/>
+</div>
+</div>
+<!-- Password Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.15em] ml-1">Password</label>
+<div class="group relative flex items-center bg-surface-container-low/80 border border-outline-variant/30 rounded-lg focus-within:border-primary/50 transition-all">
+<div class="pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-lg group-focus-within:text-primary transition-colors">lock</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline/40 py-3.5 px-4 rounded-lg outline-none text-sm" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.15em] ml-1">Confirm</label>
+<div class="group relative flex items-center bg-surface-container-low/80 border border-outline-variant/30 rounded-lg focus-within:border-primary/50 transition-all">
+<div class="pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-lg group-focus-within:text-primary transition-colors">lock</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline/40 py-3.5 px-4 rounded-lg outline-none text-sm" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<!-- Primary CTA -->
+<button class="w-full mt-4 py-4 px-6 bg-primary text-on-primary-fixed font-bold rounded-lg shadow-[0_0_25px_rgba(189,194,255,0.2)] hover:shadow-[0_0_40px_rgba(189,194,255,0.4)] active:scale-[0.99] transition-all duration-300 uppercase tracking-widest text-sm" type="submit">
+          Create Account
+        </button>
+</form>
+<div class="mt-10 flex items-center gap-4">
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+<span class="text-[9px] font-bold text-outline uppercase tracking-[0.25em] whitespace-nowrap">Or continue with</span>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+</div>
+<div class="mt-8 flex justify-center gap-4">
+<button class="flex-1 flex items-center justify-center py-3 px-4 bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg hover:bg-surface-container-highest/60 transition-colors group">
+<img alt="Google" class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj1MMetqJZ8T0p3Ywm1aPeIZa0HDNca23rDNaCy5PelpjUKKbZeok4NtZZXzBSvEUirUAFCyNtjgjBtW0cOrO_R9XvcCXLQlnWiub_LO_dcDw_nzzLp0PNMuY_p9Kmxb1QORi0tEvSsPzNUGD8lpZVHAqpxTg7Mn5Dkc2vB_ovKbhuAuqD9x8Yi2ywBE7MJQd4HZpYBN4BPtWgvfpkLYmgpycvhA4OZnoQSEyzY-josW6G0fH2qQ3lx1cApnS3UJRDqHiUxSJ4uIQ"/>
+</button>
+<button class="flex-1 flex items-center justify-center py-3 px-4 bg-surface-container-highest/30 border border-outline-variant/30 rounded-lg hover:bg-surface-container-highest/60 transition-colors group">
+<img alt="GitHub" class="w-5 h-5 opacity-50 group-hover:opacity-100 transition-opacity invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADt7OaNYl37_Adsg-Dyf6-YcDCz_dzr5bJS2gJ_6Vz0SUTI9pvKHgJfnDg-7dniEXFepvunpDSzp-omhh5ipfwmJz6BKD1XtQCTNbDgBih6_70upX6WAgxWppWIcOeUc200K7oWbltF4_TeXnoyAVaBta4N86N54OqU3N-ikMoAKlwMZqXvPks8MarY0-wriaGjzBSpeVw6Wy7p2HBTbgrAUrm20oDN4jmG_0tBsDXyHLiXXpBh1fVRKcQGuwsJu7sAKeKYosK17Y"/>
+</button>
+</div>
+</div>
+<footer class="text-center pt-2">
+<p class="text-[13px] text-on-surface-variant/80">
+        Already have an account? 
+        <a class="text-primary font-bold hover:underline underline-offset-4 transition-all ml-1" href="#">Log in</a>
+</p>
+</footer>
+</div>
+</main>
+<!-- Status Pill -->
+<div class="fixed bottom-12 left-1/2 -translate-x-1/2 z-20">
+<div class="flex items-center gap-2 px-4 py-1.5 bg-surface-container-high/60 backdrop-blur rounded-full border border-outline-variant/20 text-[10px] font-mono text-outline uppercase tracking-widest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/60 shadow-[0_0_8px_rgba(189,194,255,0.6)]"></span>
+    Network Stable
+  </div>
+</div>
+<!-- Legal Footer -->
+<div class="absolute bottom-6 w-full max-w-7xl px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] font-mono text-outline uppercase tracking-[0.2em] opacity-40 z-20">
+<span>© 2026 SNAPCODE AI. FOR THE OBSIDIAN DEEP.</span>
+<div class="flex gap-8">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Status</a>
+</div>
+</div>
+<!-- Atmospheric Overlay -->
+<div class="fixed inset-0 pointer-events-none z-[100] opacity-[0.02] contrast-125 brightness-150" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDd8CLU1wbgGTmiKOSz-wW9S-RlkGByM5ds6cRZKNi_r6wPZYDN0d8YTtJKjFYLV02DC5w4544ne5LE1tCDDRk_Npc2XW0Nj4gXIF1iZiWg5UbEo6mOGJ2NJqapg-SUUkahripx1-Zkq9QUPtQuNw0gkenvyTyAim0dikncfH-L5nmjHLaSVt_jX6LRLGmQLYd2YN6Qndzmxa_f6iNUaOscN8SWfUdG-FKqTAWZ6CLB2UY-g-S7ZvzZPUBXI3B4LtIjZB2cNRxuuEw');"></div>
+</body></html>

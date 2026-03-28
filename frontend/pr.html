@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#4edea3",
+              "surface-tint": "#adc6ff",
+              "on-error": "#690005",
+              "surface-variant": "#353437",
+              "outline": "#8c909f",
+              "surface-container-lowest": "#0e0e10",
+              "outline-variant": "#424754",
+              "secondary": "#4edea3",
+              "on-secondary-fixed": "#002113",
+              "background": "#131315",
+              "surface": "#131315",
+              "on-surface": "#e5e1e4",
+              "on-tertiary": "#502400",
+              "primary-fixed-dim": "#adc6ff",
+              "inverse-on-surface": "#313032",
+              "surface-container": "#201f22",
+              "on-secondary": "#003824",
+              "tertiary-fixed-dim": "#ffb786",
+              "primary": "#adc6ff",
+              "on-background": "#e5e1e4",
+              "primary-container": "#4d8eff",
+              "on-secondary-container": "#00311f",
+              "surface-dim": "#131315",
+              "secondary-container": "#00a572",
+              "on-surface-variant": "#c2c6d6",
+              "surface-container-high": "#2a2a2c",
+              "on-primary-fixed": "#001a42",
+              "surface-bright": "#39393b",
+              "inverse-surface": "#e5e1e4",
+              "on-tertiary-fixed-variant": "#723600",
+              "error": "#ffb4ab",
+              "on-error-container": "#ffdad6",
+              "surface-container-low": "#1c1b1d",
+              "on-primary-fixed-variant": "#004395",
+              "tertiary": "#ffb786",
+              "primary-fixed": "#d8e2ff",
+              "tertiary-fixed": "#ffdcc6",
+              "inverse-primary": "#005ac2",
+              "tertiary-container": "#df7412",
+              "on-tertiary-container": "#461f00",
+              "on-secondary-fixed-variant": "#005236",
+              "error-container": "#93000a",
+              "on-primary-container": "#00285d",
+              "on-primary": "#002e6a",
+              "surface-container-highest": "#353437",
+              "secondary-fixed": "#6ffbbe",
+              "on-tertiary-fixed": "#311400"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #353437; border-radius: 10px; }
+        .code-font { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 13px; }
+        .glass-panel { background: rgba(19, 19, 21, 0.8); backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 antialiased overflow-hidden h-screen">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-[#131315]/80 backdrop-blur-xl flex items-center justify-between px-6 h-16 w-full shadow-[0_40px_6%_-10px_rgba(173,198,255,0.06)]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#ADC6FF]">Obsidian AI</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[#ADC6FF] border-b-2 border-[#ADC6FF] pb-1 font-['Inter'] antialiased tracking-tight text-sm" href="#">Docs</a>
+<a class="text-[#C2C6D6] hover:text-[#ADC6FF] transition-colors font-['Inter'] antialiased tracking-tight text-sm" href="#">Security</a>
+<a class="text-[#C2C6D6] hover:text-[#ADC6FF] transition-colors font-['Inter'] antialiased tracking-tight text-sm" href="#">Billing</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none outline-none text-xs text-on-surface placeholder-on-surface-variant w-48" placeholder="Search codebase..." type="text"/>
+</div>
+<button class="p-2 hover:bg-[#353437] transition-all duration-200 active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-[#353437] transition-all duration-200 active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-primary/20" data-alt="portrait of a professional software engineer in a modern dark office setting with soft rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9XdJHSRsuCxuragRdDqBz5Twe6m7Rv0zQ1oUKYTQ1Ip4w_cmn8zushwfoyo3DJZllYF-c9aauzWVdtvXRBqneNVaijfnjAMT_oxnBRXDgTgGiS-HUhgInHmluoPxaUz0x4yZpUzpiTtVjHeNT_kWA2J33_btmk-ldNh5MEOx_iKkDxdhcw9s316ECaDSIbMutEl4EIBZZCNXTjXvMLXuN50myAX7RHj-w8ySDLxotpqTgmANlgE_qkHg0jp0TTmS5_cZrSPjdgNE"/>
+</div>
+</header>
+<div class="flex h-screen pt-16">
+<!-- Sidebar: File Explorer (Left) -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-[#131315] flex flex-col py-4 gap-2 border-r border-outline-variant/10">
+<div class="px-6 mb-4">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="account_tree">account_tree</span>
+<span class="font-bold text-sm tracking-tight text-primary">Core Engine</span>
+</div>
+<span class="text-[10px] bg-surface-container-highest px-1.5 py-0.5 rounded text-on-surface-variant uppercase tracking-widest font-bold">v2.4.0</span>
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-semibold text-xs py-2 px-4 rounded transition-all active:scale-95 flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                    New Analysis
+                </button>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<div class="bg-gradient-to-r from-[#ADC6FF]/10 to-transparent text-[#ADC6FF] border-r-2 border-[#ADC6FF] flex items-center gap-3 px-3 py-2 cursor-pointer group">
+<span class="material-symbols-outlined text-sm" data-icon="quick_reference_all">quick_reference_all</span>
+<span class="text-xs font-semibold tracking-wide Inter group-hover:translate-x-1 duration-200">Pull Requests</span>
+</div>
+<div class="text-[#C2C6D6] hover:bg-[#1C1B1D] flex items-center gap-3 px-3 py-2 cursor-pointer group transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="analytics">analytics</span>
+<span class="text-xs font-semibold tracking-wide Inter group-hover:translate-x-1 duration-200">Team Insights</span>
+</div>
+<div class="text-[#C2C6D6] hover:bg-[#1C1B1D] flex items-center gap-3 px-3 py-2 cursor-pointer group transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="rule_settings">rule_settings</span>
+<span class="text-xs font-semibold tracking-wide Inter group-hover:translate-x-1 duration-200">Rule Engine</span>
+</div>
+<div class="text-[#C2C6D6] hover:bg-[#1C1B1D] flex items-center gap-3 px-3 py-2 cursor-pointer group transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="account_tree">account_tree</span>
+<span class="text-xs font-semibold tracking-wide Inter group-hover:translate-x-1 duration-200">Project Map</span>
+</div>
+</nav>
+<div class="mt-auto px-3 py-4 space-y-1">
+<div class="text-[#C2C6D6] hover:bg-[#1C1B1D] flex items-center gap-3 px-3 py-2 cursor-pointer group transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+<span class="text-xs font-semibold tracking-wide Inter group-hover:translate-x-1 duration-200">Support</span>
+</div>
+<div class="text-[#C2C6D6] hover:bg-[#1C1B1D] flex items-center gap-3 px-3 py-2 cursor-pointer group transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+<span class="text-xs font-semibold tracking-wide Inter group-hover:translate-x-1 duration-200">Logout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area: Diff Viewer (Center) -->
+<main class="ml-64 mr-80 flex-1 overflow-y-auto custom-scrollbar bg-surface-container-low">
+<!-- PR Header -->
+<div class="p-8 border-b border-outline-variant/10 bg-surface">
+<div class="flex items-center gap-3 mb-2">
+<span class="text-primary text-xs font-bold tracking-widest uppercase">PR #1402</span>
+<span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] font-bold rounded-full border border-secondary/20">MERGEABLE</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-on-surface mb-4">Refactor: Graph Engine Optimization for Distributed Nodes</h1>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-2">
+<img alt="avatar" class="w-6 h-6 rounded-full border border-background" data-alt="professional male portrait for user avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGi-fNjneYetMctQcnLG1PsE3va01_3MNdkqfWVxCgNW0ksLpkGy4HTZPPkDSiw3bHkjzons5R1dmLMtNKOyu5lQ4iQmbRL0aWDscJNyt8D1iUb2azkF5Ldef5ooqS9ri9RYhny4ozGqqmCk1dqtwGtCbjKlmAb63WBRnO4CS7-J4Yr0SQ7J_5XURFWaNlWzs1Kn9FmaoJ5gBqOYAokmTNVfWJqfnOjJvBM-FebkNUlbdK51wM3Ifej_plMucxUJh1KcntFI4nVGU"/>
+<img alt="avatar" class="w-6 h-6 rounded-full border border-background" data-alt="professional female portrait for user avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqP6ERsOfbMRUomZd203-VuXZG73M0VMXMgsHhxUFr_dkRnN-E83HEBazF1kvOPXNSYJ7XrUHPsSSuBTO3vtFwyksmawNyDOP317a25bDVWu004ilQ6FBV_CnkxOKrNLSHY-cGXgAt42LN1Tn1OUCd7qH8ioVcLJ3oTA-wpNzqsnJWz7Y9w802jTdhgcaTjgUxWmgcXMWZ2PzIIZ69hC04jAz1nhzWnsbI7Cot1T3F3Ay9np4Y0SBC8-VATQWxMPWgQN8JYc9iM7g"/>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">Modified 12 files • <span class="text-secondary">+248</span> <span class="text-error">-84</span></span>
+</div>
+</div>
+<!-- Architectural Diagram Card -->
+<div class="px-8 py-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 mb-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="flex items-center gap-1 text-[10px] font-bold text-primary bg-primary/10 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[12px]" data-icon="auto_awesome">auto_awesome</span>
+                            AI IMPACT MAP
+                        </span>
+</div>
+<h3 class="text-sm font-bold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="hub">hub</span>
+                        Module Dependency Impact
+                    </h3>
+<div class="h-48 flex items-center justify-center gap-12 relative">
+<div class="flex flex-col items-center gap-2">
+<div class="w-24 h-12 bg-surface-container-high rounded border border-outline-variant/20 flex items-center justify-center text-[10px] font-mono text-on-surface-variant">API Gateway</div>
+<div class="w-px h-8 bg-outline-variant/30"></div>
+<div class="w-32 h-14 bg-primary/10 border border-primary/40 rounded flex flex-col items-center justify-center text-center px-2">
+<span class="text-[10px] font-bold text-primary">Core Engine</span>
+<span class="text-[8px] text-primary/60 italic">Current Scope</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary/40" data-icon="arrow_forward">arrow_forward</span>
+<div class="flex flex-col gap-4">
+<div class="w-24 h-10 bg-secondary/10 border border-secondary/30 rounded flex items-center justify-center text-[10px] font-mono text-secondary">Redis Cache</div>
+<div class="w-24 h-10 bg-surface-container-high border border-outline-variant/20 rounded flex items-center justify-center text-[10px] font-mono text-on-surface-variant opacity-50">Postgres DB</div>
+</div>
+<div class="absolute -bottom-2 right-0 text-[10px] text-on-surface-variant italic">
+                            * Solid lines indicate direct state mutation changes.
+                        </div>
+</div>
+</div>
+<!-- Side-by-Side Diff Viewer -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/10 overflow-hidden shadow-2xl">
+<div class="bg-surface-container-highest/50 px-4 py-2 flex items-center justify-between border-b border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="description">description</span>
+<span class="text-xs font-mono text-on-surface-variant">src/engine/distributed_nodes.ts</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] text-on-surface-variant font-bold">TYPESCRIPT</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+<div class="flex divide-x divide-outline-variant/10 code-font">
+<!-- Left Panel (Original) -->
+<div class="w-1/2 bg-[#131315]">
+<div class="flex group hover:bg-surface-variant/20 transition-colors">
+<div class="w-10 text-right pr-3 text-on-surface-variant/40 py-1">42</div>
+<div class="pl-4 py-1 text-[#C2C6D6] opacity-70">  async processNode(id: string) {</div>
+</div>
+<div class="flex group bg-error/10 hover:bg-error/20 transition-colors">
+<div class="w-10 text-right pr-3 text-error/60 py-1 font-bold">-</div>
+<div class="pl-4 py-1 text-on-surface">    const data = await this.db.fetch(id);</div>
+</div>
+<div class="flex group bg-error/10 hover:bg-error/20 transition-colors">
+<div class="w-10 text-right pr-3 text-error/60 py-1 font-bold">-</div>
+<div class="pl-4 py-1 text-on-surface">    return this.engine.compute(data);</div>
+</div>
+<div class="flex group hover:bg-surface-variant/20 transition-colors">
+<div class="w-10 text-right pr-3 text-on-surface-variant/40 py-1">45</div>
+<div class="pl-4 py-1 text-[#C2C6D6] opacity-70">  }</div>
+</div>
+</div>
+<!-- Right Panel (New) -->
+<div class="w-1/2 bg-[#131315]">
+<div class="flex group hover:bg-surface-variant/20 transition-colors">
+<div class="w-10 text-right pr-3 text-on-surface-variant/40 py-1">42</div>
+<div class="pl-4 py-1 text-[#C2C6D6]">  async processNode(id: string) {</div>
+</div>
+<div class="flex group bg-secondary/10 hover:bg-secondary/20 transition-colors relative">
+<div class="w-10 text-right pr-3 text-secondary/60 py-1 font-bold">+</div>
+<div class="pl-4 py-1 text-on-surface">    const cacheKey = `node:${id}`;</div>
+</div>
+<div class="flex group bg-secondary/10 hover:bg-secondary/20 transition-colors">
+<div class="w-10 text-right pr-3 text-secondary/60 py-1 font-bold">+</div>
+<div class="pl-4 py-1 text-on-surface">    const cached = await this.cache.get(cacheKey);</div>
+</div>
+<div class="flex group bg-secondary/10 hover:bg-secondary/20 transition-colors">
+<div class="w-10 text-right pr-3 text-secondary/60 py-1 font-bold">+</div>
+<div class="pl-4 py-1 text-on-surface">    if (cached) return cached;</div>
+</div>
+<!-- AI Inline Insight Bubble -->
+<div class="relative py-4 px-10">
+<div class="bg-primary/5 border border-primary/30 rounded-lg p-4 shadow-[0_0_20px_rgba(173,198,255,0.1)] relative">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">AI Architect Insight</span>
+</div>
+<p class="text-xs text-on-surface leading-relaxed">
+                                        Cache implementation reduces latency by <span class="text-secondary font-bold">~40ms</span>. Recommended: set TTL to <span class="font-mono text-tertiary">300s</span> for high-frequency nodes.
+                                    </p>
+<div class="flex gap-2 mt-3">
+<button class="px-3 py-1 bg-primary text-on-primary text-[10px] font-bold rounded">APPLY SUGGESTION</button>
+<button class="px-3 py-1 border border-outline-variant/30 text-on-surface-variant text-[10px] font-bold rounded">DISMISS</button>
+</div>
+<!-- Pointer -->
+<div class="absolute -top-2 left-6 w-4 h-4 bg-primary/5 border-l border-t border-primary/30 rotate-45"></div>
+</div>
+</div>
+<div class="flex group bg-secondary/10 hover:bg-secondary/20 transition-colors">
+<div class="w-10 text-right pr-3 text-secondary/60 py-1 font-bold">+</div>
+<div class="pl-4 py-1 text-on-surface">    const data = await this.db.fetch(id);</div>
+</div>
+<div class="flex group hover:bg-surface-variant/20 transition-colors">
+<div class="w-10 text-right pr-3 text-on-surface-variant/40 py-1">47</div>
+<div class="pl-4 py-1 text-[#C2C6D6]">  }</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Right Sidebar: AI Findings & Insights -->
+<aside class="fixed right-0 top-16 h-[calc(100vh-64px)] w-80 bg-surface flex flex-col border-l border-outline-variant/10">
+<div class="p-6 border-b border-outline-variant/10">
+<h3 class="text-sm font-bold text-on-surface mb-4 flex items-center justify-between">
+<span>AI Analysis Findings</span>
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold">8 NEW</span>
+</h3>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-high py-2 rounded text-[10px] font-bold text-primary border border-primary/20">ALL</button>
+<button class="flex-1 bg-surface-container-lowest py-2 rounded text-[10px] font-bold text-on-surface-variant hover:bg-surface-container-high transition-colors">CRITICAL</button>
+<button class="flex-1 bg-surface-container-lowest py-2 rounded text-[10px] font-bold text-on-surface-variant hover:bg-surface-container-high transition-colors">LOW</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-4">
+<!-- Finding Item -->
+<div class="group cursor-pointer">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-lowest border border-outline-variant/5 hover:border-error/30 transition-all">
+<span class="material-symbols-outlined text-error mt-0.5" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-[10px] font-bold text-error uppercase tracking-widest">Security Leak</span>
+<span class="text-[9px] text-on-surface-variant/50">L44</span>
+</div>
+<p class="text-[11px] text-on-surface font-medium leading-snug">Hardcoded cache key might expose internal node IDs to public telemetry.</p>
+</div>
+</div>
+</div>
+<!-- Finding Item -->
+<div class="group cursor-pointer">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-lowest border border-outline-variant/5 hover:border-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary mt-0.5" data-icon="architecture" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Architectural Pattern</span>
+<span class="text-[9px] text-on-surface-variant/50">L42-47</span>
+</div>
+<p class="text-[11px] text-on-surface font-medium leading-snug">Optimized cache-aside pattern detected. Aligns with System Design Spec v4.</p>
+</div>
+</div>
+</div>
+<!-- Finding Item -->
+<div class="group cursor-pointer">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-lowest border border-outline-variant/5 hover:border-tertiary/30 transition-all">
+<span class="material-symbols-outlined text-tertiary mt-0.5" data-icon="speed" style="font-variation-settings: 'FILL' 1;">speed</span>
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-widest">Performance</span>
+<span class="text-[9px] text-on-surface-variant/50">GLOBAL</span>
+</div>
+<p class="text-[11px] text-on-surface font-medium leading-snug">Overall computation throughput predicted to increase by 12%.</p>
+</div>
+</div>
+</div>
+<!-- Finding Item -->
+<div class="group cursor-pointer">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-lowest border border-outline-variant/5 hover:border-on-surface-variant/30 transition-all opacity-60">
+<span class="material-symbols-outlined text-on-surface-variant mt-0.5" data-icon="checklist" style="font-variation-settings: 'FILL' 1;">checklist</span>
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Style Guide</span>
+<span class="text-[9px] text-on-surface-variant/50">L12</span>
+</div>
+<p class="text-[11px] text-on-surface font-medium leading-snug">Naming convention 'processNode' follows internal standards.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Contextual CTA Footer -->
+<div class="p-6 bg-surface-container-low border-t border-outline-variant/10 mt-auto">
+<button class="w-full bg-secondary text-on-secondary font-bold text-xs py-3 rounded-lg flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+                    APPROVE AND MERGE
+                </button>
+<p class="text-center text-[9px] text-on-surface-variant mt-3 italic">
+                    Requires 1 more human reviewer approval
+                </p>
+</div>
+</aside>
+</div>
+<!-- Floating Command Bar -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 glass-panel border border-outline-variant/20 rounded-full px-6 py-3 flex items-center gap-6 shadow-2xl z-50">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="keyboard_command_key">keyboard_command_key</span>
+<span class="text-xs font-bold uppercase tracking-widest">Search</span>
+</button>
+<div class="w-px h-4 bg-outline-variant/30"></div>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="forum">forum</span>
+<span class="text-xs font-bold uppercase tracking-widest">Chat</span>
+</button>
+<div class="w-px h-4 bg-outline-variant/30"></div>
+<button class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="code">code</span>
+<span class="text-xs font-bold uppercase tracking-widest">Diff</span>
+</button>
+</div>
+</body></html>

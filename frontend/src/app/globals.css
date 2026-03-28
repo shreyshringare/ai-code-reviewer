@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #131317;
+  --foreground: #e4e1e7;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-surface-container/40 backdrop-blur-[24px];
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-morphism {
+    background: rgba(10, 10, 14, 0.45);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+  }
+
+  .neural-gradient {
+    background: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
+  }
+
+  .grid-pattern {
+    background-image: radial-gradient(rgba(189, 194, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .ascii-scan-line {
+    background: linear-gradient(to bottom, transparent, #bdc2ff11, transparent);
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    top: -150px;
+    animation: scan 10s linear infinite;
+  }
+
+  .glow-bg {
+    background: radial-gradient(circle at 20% 30%, rgba(189, 194, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(221, 183, 255, 0.05) 0%, transparent 50%);
+  }
+
+  .code-glow {
+    box-shadow: 0 0 40px -10px rgba(189, 194, 255, 0.15);
+  }
+
+  .obsidian-glow {
+    box-shadow: 0 0 40px -10px rgba(189, 194, 255, 0.05);
+  }
+
+  .obsidian-glow:hover {
+    box-shadow: 0 0 50px -5px rgba(189, 194, 255, 0.12);
+  }
+
+  .ascii-scroller {
+    animation: scroll-ascii 30s linear infinite;
+  }
+
+  .glitch-effect {
+    animation: glitch-anim 4s infinite linear alternate-reverse;
+  }
+
+  .diff-added { background-color: rgba(189, 194, 255, 0.1); }
+  .diff-removed { background-color: rgba(247, 81, 161, 0.05); }
+  .diff-glow-error { box-shadow: inset 4px 0 0 #ffb4ab, 0 0 15px rgba(255, 180, 171, 0.1); }
+}
+
+@keyframes scan {
+  0% { top: -150px; }
+  100% { top: 110%; }
+}
+
+@keyframes scroll-ascii {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes glitch-anim {
+  0% { opacity: 0.1; }
+  10% { opacity: 0.15; transform: translateX(-1px); }
+  20% { opacity: 0.1; transform: translateX(1px); }
+  50% { opacity: 0.12; }
+  90% { opacity: 0.1; }
+  100% { opacity: 0.15; }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
